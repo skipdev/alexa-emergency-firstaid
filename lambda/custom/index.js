@@ -1,3 +1,4 @@
+const topics = require('./helpers/topics')
 const Alexa = require('ask-sdk-core')
 const Interceptors = require('./interceptors')()
 const Handlers = require('./handlers')()
@@ -35,13 +36,13 @@ const EmergencyIntentHandler = {
       const requestName = handlerInput.requestEnvelope.request.intent.name
       sessionAttributes.speechText = ''
 
-      if (sessionAttributes.end === 2) {
+      if (sessionAttributes.endIntro === 2) {
          if (requestName === 'YesIntent') {
             sessionAttributes.speechText = 'Okay, which injury?'
          } else if (requestName === 'NoIntent') {
             sessionAttributes.speechText = 'Okay.'
          }
-      } else if (sessionAttributes.end === 1) {
+      } else if (sessionAttributes.endIntro === 1) {
          if (requestName === 'YesIntent') {
             sessionAttributes.speechText = 'Okay, calling now.'
          } else if (requestName === 'NoIntent') {
@@ -50,11 +51,11 @@ const EmergencyIntentHandler = {
       } else {
          if (requestName === 'YesIntent') {
             sessionAttributes.speechText = 'Should I call 911?'
-            sessionAttributes.end = 1
+            sessionAttributes.endIntro = 1
          }
          else if (requestName === 'NoIntent') {
             sessionAttributes.speechText = 'Would you like advice on an injury?'
-            sessionAttributes.end = 2
+            sessionAttributes.endIntro = 2
          }
       }
       attributesManager.setSessionAttributes(sessionAttributes)
@@ -76,36 +77,51 @@ const InjuryIntentHandler = {
       const {responseBuilder, attributesManager} = handlerInput
       const requestAttributes = attributesManager.getRequestAttributes()
       const sessionAttributes = attributesManager.getSessionAttributes()
-      sessionAttributes.speechText = requestAttributes.t('initial.ADVICE_DISCLAIMER')
-      const injury = handlerInput.requestEnvelope.request.intent.slots.injury
-
+      const requestName = handlerInput.requestEnvelope.request.intent.name
+      const disclaimer = requestAttributes.t('initial.ADVICE_DISCLAIMER')
+      sessionAttributes.injury = handlerInput.requestEnvelope.request.intent.slots.injury
       const injuryList = requestAttributes.t('initial.INJURIES')
-      const userInjury = injury.value
-      sessionAttributes.counter = 1
-      let counter = sessionAttributes.counter
-      const noOfSteps = Object.keys(injuryList[userInjury][0]).length
-      sessionAttributes.currentStep = injuryList[userInjury][0].step1
+
+      // the user's injury
+      const injury = sessionAttributes.injury
+      let unvalidatedInjury = ''
+      if (injury && injury.value) {
+         unvalidatedInjury = injury.value.toLowerCase()
+      }
+      sessionAttributes.validInjury = null
+
+      switch (unvalidatedInjury) {
+         case topics.BLEEDING:
+            sessionAttributes.userInjury = topics.BLEEDING
+            break
+         case topics.BURNS:
+            sessionAttributes.userInjury = topics.BURNS
+            break
+         case topics.BROKEN_BONES:
+            sessionAttributes.userInjury = topics.BROKEN_BONES
+            break
+         case topics.CHOKING:
+            sessionAttributes.userInjury = topics.CHOKING
+            break
+      }
+
+      const userInjury = sessionAttributes.userInjury
+
+      // number of steps total for this particular injury
+      const noOfSteps = ((Object.keys(injuryList[userInjury]).length) - 1)
+
+      // the user's current step
+      sessionAttributes.counter = 0
+      const counter = sessionAttributes.counter
+      sessionAttributes.currentStep = injuryList[userInjury][counter].text
       const currentStep = sessionAttributes.currentStep
+
+      sessionAttributes.speechText = disclaimer + ' ' + 'Here is your first step: ' + currentStep
 
       attributesManager.setSessionAttributes(sessionAttributes)
       return responseBuilder
-         .speak(sessionAttributes.speechText + ' Your injury is: ' + userInjury + ' The count is: ' + counter + '. The no of steps is:' + noOfSteps + '. The current step is: ' + currentStep)
+         .speak(sessionAttributes.speechText)
          .reprompt(sessionAttributes.speechText)
-         .getResponse()
-   }
-}
-
-
-const TestIntentHandler = {
-   canHandle (handlerInput) {
-      return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
-         (handlerInput.requestEnvelope.request.intent.name === 'TestIntent')
-   },
-   handle (handlerInput) {
-      const { responseBuilder } = handlerInput
-      let speechText = 'test'
-      return responseBuilder
-         .speak(speechText)
          .getResponse()
    }
 }
@@ -113,17 +129,40 @@ const TestIntentHandler = {
 const NextIntentHandler = {
    canHandle (handlerInput) {
       return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
-         (handlerInput.requestEnvelope.request.intent.name === 'NextIntent')
+         handlerInput.requestEnvelope.request.intent.name === 'NextIntent'
    },
    handle (handlerInput) {
-      const { responseBuilder } = handlerInput
-      let speechText = 'you said next'
+      const {responseBuilder, attributesManager} = handlerInput
+      const requestAttributes = attributesManager.getRequestAttributes()
+      const sessionAttributes = attributesManager.getSessionAttributes()
+      const injuryList = requestAttributes.t('initial.INJURIES')
+      const userInjury = sessionAttributes.userInjury
+      const noOfSteps = ((Object.keys(injuryList[userInjury]).length) - 1)
+      sessionAttributes.counter += 1
+      const counter = sessionAttributes.counter
+      sessionAttributes.currentStep = injuryList[userInjury][counter].text
+      const currentStep = sessionAttributes.currentStep
+
+      // if (counter === noOfSteps) {
+            // //    sessionAttributes.speechText = 'Final step: ' + currentStep
+            // // } else {
+            // sessionAttributes.counter = 1
+            // const counter = sessionAttributes.counter
+            // sessionAttributes.currentStep = injuryList[userInjury][counter].text
+            // const currentStep = sessionAttributes.currentStep
+            // sessionAttributes.speechText = 'Next step: ' + currentStep
+            // sessionAttributes.counter += 1
+            //
+
+      sessionAttributes.speechText = currentStep
+
+      attributesManager.setSessionAttributes(sessionAttributes)
       return responseBuilder
-         .speak(speechText)
+         .speak(sessionAttributes.speechText)
+         .reprompt(sessionAttributes.speechText)
          .getResponse()
    }
 }
-
 const CancelAndStopIntentHandler = {
   canHandle (handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
@@ -194,7 +233,6 @@ exports.handler = skillBuilder
     EmergencyIntentHandler,
     InjuryIntentHandler,
     NextIntentHandler,
-    TestIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler
