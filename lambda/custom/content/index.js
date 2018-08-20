@@ -7,6 +7,7 @@ exports.strings = {
         SKILL_NAME: 'Emergency First-aid',
         HELLO: 'Welcome to {{skillName}}. Are you currently in an emergency?',
         INJURIES: injuries.INJURIES_EN_US,
+        ADVICE_DISCLAIMER: 'Please call 911 if you are in an emergency, this is not a substitute for professional medical advice.',
         YES: 'yes',
         NO: 'no',
         OKAY: 'Okay'

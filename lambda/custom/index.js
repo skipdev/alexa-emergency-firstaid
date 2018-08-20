@@ -74,13 +74,22 @@ const InjuryIntentHandler = {
    },
    handle(handlerInput) {
       const {responseBuilder, attributesManager} = handlerInput
+      const requestAttributes = attributesManager.getRequestAttributes()
       const sessionAttributes = attributesManager.getSessionAttributes()
-      sessionAttributes.speechText = 'This is the injury handler.'
-      const userInjury = handlerInput.requestEnvelope.request.intent.slots.injury
+      sessionAttributes.speechText = requestAttributes.t('initial.ADVICE_DISCLAIMER')
+      const injury = handlerInput.requestEnvelope.request.intent.slots.injury
+
+      const injuryList = requestAttributes.t('initial.INJURIES')
+      const userInjury = injury.value
+      sessionAttributes.counter = 1
+      let counter = sessionAttributes.counter
+      const noOfSteps = Object.keys(injuryList[userInjury][0]).length
+      sessionAttributes.currentStep = injuryList[userInjury][0].step1
+      const currentStep = sessionAttributes.currentStep
 
       attributesManager.setSessionAttributes(sessionAttributes)
       return responseBuilder
-         .speak(sessionAttributes.speechText + ' Your injury is: ' + userInjury.value)
+         .speak(sessionAttributes.speechText + ' Your injury is: ' + userInjury + ' The count is: ' + counter + '. The no of steps is:' + noOfSteps + '. The current step is: ' + currentStep)
          .reprompt(sessionAttributes.speechText)
          .getResponse()
    }
