@@ -35,21 +35,27 @@ const EmergencyIntentHandler = {
       const requestName = handlerInput.requestEnvelope.request.intent.name
       sessionAttributes.speechText = ''
 
-      if (sessionAttributes.end === 1) {
+      if (sessionAttributes.end === 2) {
+         if (requestName === 'YesIntent') {
+            sessionAttributes.speechText = 'Okay, which injury?'
+         } else if (requestName === 'NoIntent') {
+            sessionAttributes.speechText = 'Okay.'
+         }
+      } else if (sessionAttributes.end === 1) {
          if (requestName === 'YesIntent') {
             sessionAttributes.speechText = 'Okay, calling now.'
          } else if (requestName === 'NoIntent') {
             sessionAttributes.speechText = 'Okay, I won\'t call them.'
          }
-      }
-      else {
+      } else {
          if (requestName === 'YesIntent') {
             sessionAttributes.speechText = 'Should I call 911?'
+            sessionAttributes.end = 1
          }
          else if (requestName === 'NoIntent') {
             sessionAttributes.speechText = 'Would you like advice on an injury?'
+            sessionAttributes.end = 2
          }
-         sessionAttributes.end = 1
       }
       attributesManager.setSessionAttributes(sessionAttributes)
       return responseBuilder
@@ -58,6 +64,28 @@ const EmergencyIntentHandler = {
          .getResponse()
    }
 }
+
+const InjuryIntentHandler = {
+   canHandle(handlerInput) {
+      return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
+         (handlerInput.requestEnvelope.request.intent.name === 'InjuryIntent' ||
+            handlerInput.requestEnvelope.request.intent.name === 'YesIntent' ||
+            handlerInput.requestEnvelope.request.intent.name === 'NoIntent')
+   },
+   handle(handlerInput) {
+      const {responseBuilder, attributesManager} = handlerInput
+      const sessionAttributes = attributesManager.getSessionAttributes()
+      sessionAttributes.speechText = 'This is the injury handler.'
+      const userInjury = handlerInput.requestEnvelope.request.intent.slots.injury
+
+      attributesManager.setSessionAttributes(sessionAttributes)
+      return responseBuilder
+         .speak(sessionAttributes.speechText + ' Your injury is: ' + userInjury.value)
+         .reprompt(sessionAttributes.speechText)
+         .getResponse()
+   }
+}
+
 
 const TestIntentHandler = {
    canHandle (handlerInput) {
@@ -154,9 +182,8 @@ const skillBuilder = Alexa.SkillBuilders.custom()
 exports.handler = skillBuilder
   .addRequestHandlers(
     defaultHandlers.LaunchRequestHandler,
-    quizHandlers.StartQuiz,
-    quizHandlers.AnswerHandler,
     EmergencyIntentHandler,
+    InjuryIntentHandler,
     NextIntentHandler,
     TestIntentHandler,
     HelpIntentHandler,

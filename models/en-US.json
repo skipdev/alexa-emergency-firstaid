@@ -94,7 +94,7 @@
           ]
         },
         {
-          "name": "StartQuiz",
+          "name": "InjuryIntent",
           "slots": [
             {
               "name": "injury",
