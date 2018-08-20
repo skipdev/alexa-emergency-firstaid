@@ -1,0 +1,115 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "steph skill",
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "bleeding",
+                "synonyms": [
+                  "bleeds",
+                  "blood"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "breakages",
+                "synonyms": [
+                  "broken bones"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "choking"
+              }
+            }
+          ],
+          "name": "LIST_OF_INJURIES"
+        }
+      ],
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": [
+
+          ]
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": [
+
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+
+          ]
+        },
+        {
+          "name": "YesIntent",
+          "samples": [
+            "yes",
+            "yeah",
+            "yep",
+            "yup"
+          ]
+        },
+        {
+          "name": "NoIntent",
+          "samples": [
+            "no",
+            "nope",
+            "nah"
+          ]
+        },
+        {
+          "name": "NextIntent",
+          "samples": [
+            "next",
+            "next step",
+            "what's next"
+          ]
+        },
+        {
+          "name": "TestIntent",
+          "samples": [
+            "test"
+          ]
+        },
+        {
+          "name": "StartQuiz",
+          "slots": [
+            {
+              "name": "injury",
+              "type": "LIST_OF_INJURIES"
+            }
+          ],
+          "samples": [
+            "i want a quiz on {injury}",
+            "quiz me on {injury}",
+            "quiz {injury}",
+            "{injury} quiz",
+            "{injury}"
+          ]
+        }
+      ]
+    }
+  }
+}
