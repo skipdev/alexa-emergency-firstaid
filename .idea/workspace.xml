@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0a50bd02-9835-42da-9a15-27bf2a9c3979" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.ask/config" beforeDir="false" afterPath="$PROJECT_DIR$/.ask/config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lambda/custom/content/injuries.js" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/custom/content/injuries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lambda/custom/helpers/topics.js" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/custom/helpers/topics.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lambda/custom/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/custom/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/en-US.json" beforeDir="false" afterPath="$PROJECT_DIR$/models/en-US.json" afterDir="false" />
     </list>
@@ -24,17 +21,17 @@
       <file leaf-file-name="en-US.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/en-US.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1091">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="335">
+              <caret line="175" column="30" lean-forward="true" selection-start-line="175" selection-start-column="30" selection-end-line="175" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lambda/custom/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+            <state relative-caret-position="1233">
+              <caret line="207" column="36" lean-forward="true" selection-start-line="207" selection-start-column="36" selection-end-line="207" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -42,17 +39,17 @@
       <file leaf-file-name="topics.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lambda/custom/helpers/topics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+            <state relative-caret-position="270">
+              <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="injuries.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="injuries.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lambda/custom/content/injuries.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="35" column="10" lean-forward="true" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+            <state relative-caret-position="161">
+              <caret line="40" column="10" lean-forward="true" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -60,8 +57,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lambda/custom/content/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+            <state relative-caret-position="240">
+              <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -77,11 +74,13 @@
       <find>refreshgame</find>
       <find>}</find>
       <find>911</find>
+      <find>Someone with meningitis</find>
     </findStrings>
     <replaceStrings>
       <replace>EmergencyIntentHandler</replace>
       <replace>999</replace>
       <replace>emergencyCall</replace>
+      <replace>Assess the symptoms. Someone with meningitis</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -95,9 +94,9 @@
         <option value="$PROJECT_DIR$/lambda/custom/handlers/quizHandlers.js" />
         <option value="$PROJECT_DIR$/lambda/custom/content/index.js" />
         <option value="$PROJECT_DIR$/lambda/custom/helpers/topics.js" />
+        <option value="$PROJECT_DIR$/lambda/custom/content/injuries.js" />
         <option value="$PROJECT_DIR$/models/en-US.json" />
         <option value="$PROJECT_DIR$/lambda/custom/index.js" />
-        <option value="$PROJECT_DIR$/lambda/custom/content/injuries.js" />
       </list>
     </option>
   </component>
@@ -409,12 +408,12 @@
       <updated>1534755941987</updated>
       <workItem from="1534755943551" duration="614000" />
       <workItem from="1534756964257" duration="20269000" />
-      <workItem from="1534789482131" duration="14313000" />
+      <workItem from="1534789482131" duration="15462000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35196000" />
+    <option name="totallyTimeSpent" value="36345000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -568,38 +567,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/en-US.json">
+    <entry file="file://$PROJECT_DIR$/lambda/custom/content/injuries.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1091">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lambda/custom/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+        <state relative-caret-position="161">
+          <caret line="40" column="10" lean-forward="true" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lambda/custom/content/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        <state relative-caret-position="240">
+          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/en-US.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="175" column="30" lean-forward="true" selection-start-line="175" selection-start-column="30" selection-end-line="175" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lambda/custom/helpers/topics.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        <state relative-caret-position="270">
+          <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lambda/custom/content/injuries.js">
+    <entry file="file://$PROJECT_DIR$/lambda/custom/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="35" column="10" lean-forward="true" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+        <state relative-caret-position="1233">
+          <caret line="207" column="36" lean-forward="true" selection-start-line="207" selection-start-column="36" selection-end-line="207" selection-end-column="36" />
         </state>
       </provider>
     </entry>

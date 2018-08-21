@@ -163,10 +163,36 @@
           ]
         },
         {
+          "name": "RepeatIntent",
+          "samples": [
+            "say it again",
+            "say again",
+            "repeat",
+            "repeat the step",
+            "again"
+          ]
+        },
+        {
+          "name": "PreviousIntent",
+          "samples": [
+            "back",
+            "go back",
+            "go back one",
+            "back one",
+            "back one step",
+            "previous",
+            "previous step",
+            "last step",
+            "what was the last step",
+            "say the last step again"
+          ]
+        },
+        {
           "name": "NextIntent",
           "samples": [
             "next",
             "next step",
+            "skip",
             "what's next"
           ]
         },

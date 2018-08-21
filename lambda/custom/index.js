@@ -133,9 +133,7 @@ const InjuryIntentHandler = {
 const NextIntentHandler = {
    canHandle (handlerInput) {
       return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
-         (handlerInput.requestEnvelope.request.intent.name === 'NextIntent' ||
-         handlerInput.requestEnvelope.request.intent.name === 'YesIntent' ||
-      handlerInput.requestEnvelope.request.intent.name === 'NoIntent')
+         handlerInput.requestEnvelope.request.intent.name === 'NextIntent'
    },
    handle (handlerInput) {
       const {responseBuilder, attributesManager} = handlerInput
@@ -164,6 +162,70 @@ const NextIntentHandler = {
          .getResponse()
    }
 }
+const RepeatIntentHandler = {
+   canHandle (handlerInput) {
+      return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
+         handlerInput.requestEnvelope.request.intent.name === 'RepeatIntent'
+   },
+   handle (handlerInput) {
+      const {responseBuilder, attributesManager} = handlerInput
+      const requestAttributes = attributesManager.getRequestAttributes()
+      const sessionAttributes = attributesManager.getSessionAttributes()
+      const injuryList = requestAttributes.t('initial.INJURIES')
+      const userInjury = sessionAttributes.userInjury
+      const noOfSteps = ((Object.keys(injuryList[userInjury]).length) - 1)
+      const counter = sessionAttributes.counter
+      sessionAttributes.currentStep = injuryList[userInjury][counter].text
+      const currentStep = sessionAttributes.currentStep
+      sessionAttributes.resetFlow = 0
+
+      if (counter === noOfSteps) {
+        sessionAttributes.speechText = currentStep + '. You have now completed all the necessary steps. Would you like help with anything else?'
+        sessionAttributes.resetFlow = 1
+      } else {
+         sessionAttributes.speechText = currentStep
+      }
+
+      attributesManager.setSessionAttributes(sessionAttributes)
+      return responseBuilder
+         .speak(sessionAttributes.speechText)
+         .reprompt(sessionAttributes.speechText)
+         .getResponse()
+   }
+}
+const PreviousIntentHandler = {
+   canHandle (handlerInput) {
+      return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
+         handlerInput.requestEnvelope.request.intent.name === 'PreviousIntent'
+   },
+   handle (handlerInput) {
+      const {responseBuilder, attributesManager} = handlerInput
+      const requestAttributes = attributesManager.getRequestAttributes()
+      const sessionAttributes = attributesManager.getSessionAttributes()
+      const injuryList = requestAttributes.t('initial.INJURIES')
+      const userInjury = sessionAttributes.userInjury
+      const noOfSteps = ((Object.keys(injuryList[userInjury]).length) - 1)
+      sessionAttributes.counter -= 1
+      const counter = sessionAttributes.counter
+      sessionAttributes.currentStep = injuryList[userInjury][counter].text
+      const currentStep = sessionAttributes.currentStep
+      sessionAttributes.resetFlow = 0
+
+      if (counter === noOfSteps) {
+        sessionAttributes.speechText = currentStep + '. You have now completed all the necessary steps. Would you like help with anything else?'
+        sessionAttributes.resetFlow = 1
+      } else {
+         sessionAttributes.speechText = currentStep
+      }
+
+      attributesManager.setSessionAttributes(sessionAttributes)
+      return responseBuilder
+         .speak(sessionAttributes.speechText)
+         .reprompt(sessionAttributes.speechText)
+         .getResponse()
+   }
+}
+
 const CancelAndStopIntentHandler = {
   canHandle (handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
@@ -232,6 +294,8 @@ exports.handler = skillBuilder
     EmergencyIntentHandler,
     InjuryIntentHandler,
     NextIntentHandler,
+    RepeatIntentHandler,
+    PreviousIntentHandler,
     HelpIntentHandler,
     ThanksIntentHandler,
     CancelAndStopIntentHandler,
