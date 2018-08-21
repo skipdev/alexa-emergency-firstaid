@@ -1,6 +1,23 @@
 module.exports = {
-  BLEEDING: 'bleeding',
-  BROKEN_BONES: 'broken bones',
-  CHOKING: 'choking',
-  BURNS: 'burns'
+   ALLERGY: 'allergy',
+   ANIMAL_BITE: 'animal bite',
+   ASTHMA_ATTACK: 'asthma attack',
+   BLEEDING: 'bleeding',
+   BROKEN_BONES: 'broken bones',
+   BURNS: 'burns',
+   CHOKING: 'choking',
+   CONCUSSION: 'concussion',
+   DIABETES: 'diabetes',
+   DISTRESS: 'distress',
+   EBOLA: 'ebola',
+   HEART_ATTACK: 'heart attack',
+   HEAT_STROKE: 'heat stroke',
+   HYPOTHERMIA: 'hypothermia',
+   MENINGITIS: 'meningitis',
+   POISONING: 'poisoning',
+   SEIZURE: 'seizure',
+   STING: 'sting',
+   SPRAIN: 'sprain',
+   STROKE: 'stroke',
+   UNRESPONSIVE: 'unresponsive'
 }

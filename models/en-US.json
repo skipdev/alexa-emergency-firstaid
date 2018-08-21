@@ -7,24 +7,107 @@
           "values": [
             {
               "name": {
-                "value": "bleeding",
-                "synonyms": [
-                  "bleeds",
-                  "blood"
-                ]
+                "value": "allergies"
               }
             },
             {
               "name": {
-                "value": "breakages",
-                "synonyms": [
-                  "broken bones"
-                ]
+                "value": "animal bite"
+              }
+            },
+            {
+              "name": {
+                "value": "asthma attack"
+              }
+            },
+            {
+              "name": {
+                "value": "bleeding"
+              }
+            },
+            {
+              "name": {
+                "value": "broken bones"
+              }
+            },
+            {
+              "name": {
+                "value": "burns"
               }
             },
             {
               "name": {
                 "value": "choking"
+              }
+            },
+            {
+              "name": {
+                "value": "concussion"
+              }
+            },
+            {
+              "name": {
+                "value": "diabetes"
+              }
+            },
+            {
+              "name": {
+                "value": "distress"
+              }
+            },
+            {
+              "name": {
+                "value": "ebola"
+              }
+            },
+            {
+              "name": {
+                "value": "heart attack"
+              }
+            },
+            {
+              "name": {
+                "value": "heat stroke"
+              }
+            },
+            {
+              "name": {
+                "value": "hypothermia"
+              }
+            },
+            {
+              "name": {
+                "value": "meningitis"
+              }
+            },
+            {
+              "name": {
+                "value": "poisoning"
+              }
+            },
+            {
+              "name": {
+                "value": "seizure"
+              }
+            },
+            {
+              "name": {
+                "value": "sting"
+              }
+            },
+            {
+              "name": {
+                "value": "sprain"
+              }
+            },
+            {
+              "name": {
+                "value": "stroke"
+              }
+            },
+            {
+              "name": {
+                "value": "unresponsive"
               }
             }
           ],

@@ -108,25 +108,8 @@ const InjuryIntentHandler = {
 
       // the user's injury
       const injury = sessionAttributes.injury
-      let unvalidatedInjury = ''
       if (injury && injury.value) {
-         unvalidatedInjury = injury.value.toLowerCase()
-      }
-      sessionAttributes.validInjury = null
-
-      switch (unvalidatedInjury) {
-         case topics.BLEEDING:
-            sessionAttributes.userInjury = topics.BLEEDING
-            break
-         case topics.BURNS:
-            sessionAttributes.userInjury = topics.BURNS
-            break
-         case topics.BROKEN_BONES:
-            sessionAttributes.userInjury = topics.BROKEN_BONES
-            break
-         case topics.CHOKING:
-            sessionAttributes.userInjury = topics.CHOKING
-            break
+         sessionAttributes.userInjury = injury.value.toLowerCase()
       }
 
       const userInjury = sessionAttributes.userInjury
