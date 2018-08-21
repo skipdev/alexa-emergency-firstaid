@@ -1,4 +1,3 @@
-const topics = require('./helpers/topics')
 const Alexa = require('ask-sdk-core')
 const Interceptors = require('./interceptors')()
 const Handlers = require('./handlers')()
@@ -12,7 +11,7 @@ const HelpIntentHandler = {
   handle (handlerInput) {
     const { attributesManager } = handlerInput
     const requestAttributes = attributesManager.getRequestAttributes()
-    const speechText = requestAttributes.t('initial.OPTIONS')
+    const speechText = requestAttributes.t('initial.HELP')
     const skillName = requestAttributes.t('initial.SKILL_NAME')
 
     return handlerInput.responseBuilder
@@ -51,35 +50,44 @@ const EmergencyIntentHandler = {
    handle (handlerInput) {
       const { responseBuilder, attributesManager} = handlerInput
       const sessionAttributes = attributesManager.getSessionAttributes()
+      const requestAttributes = attributesManager.getRequestAttributes()
+      const options = requestAttributes.t('initial.OPTIONS')
+      const callPrompt = requestAttributes.t('initial.CALL_PROMPT')
+      const helpPrompt = requestAttributes.t('initial.HELP_PROMPT')
+      const callConfirmed = requestAttributes.t('initial.CALL_CONFIRMED')
+      const callDeclined = requestAttributes.t('initial.CALL_DECLINED')
+      const injuryPrompt = requestAttributes.t('initial.INJURY_PROMPT')
+      const userEnding = requestAttributes.t('initial.USER_ENDING')
       const requestName = handlerInput.requestEnvelope.request.intent.name
       sessionAttributes.speechText = ''
 
       if (requestName === 'EmergencyIntent') {
-         sessionAttributes.speechText = 'Should I call 911?'
+         sessionAttributes.speechText = callPrompt
          sessionAttributes.emergencyCall = 1
       }
       else if (requestName === 'InjuryPromptIntent') {
-         sessionAttributes.speechText = 'Okay, which injury?'
+         sessionAttributes.speechText = injuryPrompt
       }
       else if (requestName === 'YesIntent') {
          if (sessionAttributes.resetFlow === 1) {
-            sessionAttributes.speechText = "Are you in an emergency, or would you like help with an injury?"
+            sessionAttributes.speechText = options
             sessionAttributes.resetFlow = 0
          }
          else if (sessionAttributes.emergencyCall === 1) {
-            sessionAttributes.speechText = 'Okay, calling now.'
+            sessionAttributes.speechText = callConfirmed
          }
       }
       else if (requestName === 'NoIntent') {
          if (sessionAttributes.resetFlow === 1) {
-            sessionAttributes.speechText = "Okay, bye."
+            sessionAttributes.speechText = userEnding
             return handlerInput.responseBuilder
                .speak(sessionAttributes.speechText)
                .withShouldEndSession(true)
                .getResponse()
          }
          else if (sessionAttributes.emergencyCall === 1) {
-            sessionAttributes.speechText = 'Okay, I won\'t call them.'
+            sessionAttributes.speechText = callDeclined + ' ' + helpPrompt
+            sessionAttributes.resetFlow = 1
          }
       }
 
@@ -103,6 +111,7 @@ const InjuryIntentHandler = {
       const requestAttributes = attributesManager.getRequestAttributes()
       const sessionAttributes = attributesManager.getSessionAttributes()
       const disclaimer = requestAttributes.t('initial.ADVICE_DISCLAIMER')
+      const firstStepText = requestAttributes.t('initial.FIRST_STEP_TEXT')
       sessionAttributes.injury = handlerInput.requestEnvelope.request.intent.slots.injury
       const injuryList = requestAttributes.t('initial.INJURIES')
 
@@ -120,7 +129,7 @@ const InjuryIntentHandler = {
       sessionAttributes.currentStep = injuryList[userInjury][counter].text
       const currentStep = sessionAttributes.currentStep
 
-      sessionAttributes.speechText = disclaimer + ' ' + 'Here is your first step: ' + currentStep
+      sessionAttributes.speechText = disclaimer + ' ' + firstStepText + currentStep
 
       attributesManager.setSessionAttributes(sessionAttributes)
       return responseBuilder
@@ -140,6 +149,8 @@ const NextIntentHandler = {
       const requestAttributes = attributesManager.getRequestAttributes()
       const sessionAttributes = attributesManager.getSessionAttributes()
       const injuryList = requestAttributes.t('initial.INJURIES')
+      const finalStepText = requestAttributes.t('initial.FINAL_STEP_TEXT')
+      const repeatPrompt = requestAttributes.t('initial.REPEAT_PROMPT')
       const userInjury = sessionAttributes.userInjury
       const noOfSteps = ((Object.keys(injuryList[userInjury]).length) - 1)
       sessionAttributes.counter += 1
@@ -149,7 +160,7 @@ const NextIntentHandler = {
       sessionAttributes.resetFlow = 0
 
       if (counter === noOfSteps) {
-        sessionAttributes.speechText = 'Final step: ' + currentStep + '. You have now completed all the necessary steps. Would you like help with anything else?'
+        sessionAttributes.speechText = finalStepText + currentStep + '. ' + repeatPrompt
         sessionAttributes.resetFlow = 1
       } else {
          sessionAttributes.speechText = currentStep
@@ -172,6 +183,7 @@ const RepeatIntentHandler = {
       const requestAttributes = attributesManager.getRequestAttributes()
       const sessionAttributes = attributesManager.getSessionAttributes()
       const injuryList = requestAttributes.t('initial.INJURIES')
+      const repeatPrompt = requestAttributes.t('initial.REPEAT_PROMPT')
       const userInjury = sessionAttributes.userInjury
       const noOfSteps = ((Object.keys(injuryList[userInjury]).length) - 1)
       const counter = sessionAttributes.counter
@@ -180,7 +192,7 @@ const RepeatIntentHandler = {
       sessionAttributes.resetFlow = 0
 
       if (counter === noOfSteps) {
-        sessionAttributes.speechText = currentStep + '. You have now completed all the necessary steps. Would you like help with anything else?'
+        sessionAttributes.speechText = currentStep + '. ' + repeatPrompt
         sessionAttributes.resetFlow = 1
       } else {
          sessionAttributes.speechText = currentStep
@@ -203,6 +215,7 @@ const PreviousIntentHandler = {
       const requestAttributes = attributesManager.getRequestAttributes()
       const sessionAttributes = attributesManager.getSessionAttributes()
       const injuryList = requestAttributes.t('initial.INJURIES')
+      const repeatPrompt = requestAttributes.t('initial.REPEAT_PROMPT')
       const userInjury = sessionAttributes.userInjury
       const noOfSteps = ((Object.keys(injuryList[userInjury]).length) - 1)
       sessionAttributes.counter -= 1
@@ -212,7 +225,7 @@ const PreviousIntentHandler = {
       sessionAttributes.resetFlow = 0
 
       if (counter === noOfSteps) {
-        sessionAttributes.speechText = currentStep + '. You have now completed all the necessary steps. Would you like help with anything else?'
+        sessionAttributes.speechText = currentStep + '. ' + repeatPrompt
         sessionAttributes.resetFlow = 1
       } else {
          sessionAttributes.speechText = currentStep
@@ -235,28 +248,12 @@ const CancelAndStopIntentHandler = {
   handle (handlerInput) {
     const { responseBuilder, attributesManager } = handlerInput
     const requestAttributes = attributesManager.getRequestAttributes()
-    const sessionAttributes = attributesManager.getSessionAttributes()
     const skillName = requestAttributes.t('initial.SKILL_NAME')
-    const byeMessages = requestAttributes.t('initial.BYE_MESSAGES')
-    const byeNumber = Math.floor(Math.random() * byeMessages.length)
-    let speechText = ''
-    let questionTotal = ''
-    let scoreNumber = ''
-
-    if (sessionAttributes.score) {
-       scoreNumber = sessionAttributes.score
-       questionTotal = sessionAttributes.quizLength
-    }
-
-      if (scoreNumber === questionTotal) {
-        speechText = requestAttributes.t('initial.ALL_ANSWERS_CORRECT') + ' ' + byeMessages[byeNumber] + '!'
-      } else {
-      speechText = byeMessages[byeNumber]
-      }
+    const byeMessage = requestAttributes.t('initial.BYE')
 
     return responseBuilder
-      .speak(speechText)
-      .withSimpleCard(skillName, byeMessages[byeNumber] + '!')
+      .speak(byeMessage)
+      .withSimpleCard(skillName, byeMessage)
       .getResponse()
   }
 }
