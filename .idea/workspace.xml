@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0a50bd02-9835-42da-9a15-27bf2a9c3979" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.ask/config" beforeDir="false" afterPath="$PROJECT_DIR$/.ask/config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lambda/custom/content/injuries.js" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/custom/content/injuries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lambda/custom/content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/custom/content/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lambda/custom/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/custom/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/en-US.json" beforeDir="false" afterPath="$PROJECT_DIR$/models/en-US.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,17 +23,17 @@
       <file leaf-file-name="en-US.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/en-US.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
+            <state relative-caret-position="138">
+              <caret line="87" column="11" lean-forward="true" selection-start-line="87" selection-start-column="11" selection-end-line="87" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lambda/custom/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="152" column="56" selection-start-line="152" selection-start-column="56" selection-end-line="152" selection-end-column="56" />
+            <state relative-caret-position="-1438">
+              <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -39,8 +41,8 @@
       <file leaf-file-name="topics.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lambda/custom/helpers/topics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            <state relative-caret-position="90">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -48,17 +50,17 @@
       <file leaf-file-name="quizHandlers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lambda/custom/handlers/quizHandlers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+            <state relative-caret-position="347">
+              <caret line="168" column="22" lean-forward="true" selection-start-line="168" selection-start-column="22" selection-end-line="168" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="injuries.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="injuries.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lambda/custom/content/injuries.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+            <state>
+              <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -66,8 +68,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lambda/custom/content/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+            <state relative-caret-position="255">
+              <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -81,6 +83,7 @@
       <find>sessiona</find>
       <find>YesIntentHandler</find>
       <find>refreshgame</find>
+      <find>}</find>
     </findStrings>
     <replaceStrings>
       <replace>EmergencyIntentHandler</replace>
@@ -95,10 +98,10 @@
         <option value="$PROJECT_DIR$/lambda/custom/interceptors/index.js" />
         <option value="$PROJECT_DIR$/lambda/custom/handlers/index.js" />
         <option value="$PROJECT_DIR$/lambda/custom/handlers/quizHandlers.js" />
+        <option value="$PROJECT_DIR$/lambda/custom/content/injuries.js" />
         <option value="$PROJECT_DIR$/models/en-US.json" />
         <option value="$PROJECT_DIR$/lambda/custom/content/index.js" />
         <option value="$PROJECT_DIR$/lambda/custom/index.js" />
-        <option value="$PROJECT_DIR$/lambda/custom/content/injuries.js" />
       </list>
     </option>
   </component>
@@ -108,8 +111,209 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/lambda/custom/node_modules" />
+  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/acorn-jsx/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/acorn/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/ajv-keywords/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/ajv/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/ansi-escapes/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/ansi-regex/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/ansi-styles/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/argparse/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/array-union/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/array-uniq/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/arrify/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/ask-sdk-core/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/ask-sdk-model/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/babel-code-frame/node_modules/chalk/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/babel-code-frame/node_modules/strip-ansi/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/babel-code-frame/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/balanced-match/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/brace-expansion/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/builtin-modules/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/caller-path/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/callsites/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/chalk/node_modules/ansi-styles/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/chalk/node_modules/supports-color/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/chalk/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/chardet/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/circular-json/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/cli-cursor/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/cli-width/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/color-convert/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/color-name/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/concat-map/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/contains-path/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/cross-spawn/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/deep-is/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/define-properties/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/del/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/doctrine/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/error-ex/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/es-abstract/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/es-to-primitive/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/escape-string-regexp/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/eslint-config-standard/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/eslint-import-resolver-node/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/eslint-import-resolver-node/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/eslint-module-utils/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/eslint-module-utils/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/eslint-plugin-es/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/eslint-plugin-import/memo-parser/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/eslint-plugin-import/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/eslint-plugin-import/node_modules/doctrine/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/eslint-plugin-import/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/eslint-plugin-node/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/eslint-plugin-promise/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/eslint-plugin-standard/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/eslint-scope/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/eslint-utils/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/eslint-visitor-keys/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/eslint/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/espree/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/esprima/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/esquery/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/esrecurse/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/estraverse/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/esutils/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/external-editor/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/fast-deep-equal/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/fast-json-stable-stringify/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/fast-levenshtein/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/figures/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/file-entry-cache/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/find-up/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/flat-cache/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/foreach/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/fs.realpath/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/function-bind/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/functional-red-black-tree/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/globals/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/globby/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/has-ansi/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/has-flag/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/has-symbols/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/has/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/hosted-git-info/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/i18next-sprintf-postprocessor/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/i18next/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/iconv-lite/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/ignore/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/imurmurhash/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/inflight/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/inquirer/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/is-arrayish/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/is-builtin-module/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/is-callable/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/is-date-object/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/is-fullwidth-code-point/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/is-path-cwd/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/is-path-in-cwd/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/is-path-inside/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/is-promise/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/is-regex/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/is-resolvable/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/is-symbol/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/isexe/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/js-tokens/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/js-yaml/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/json-schema-traverse/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/json-stable-stringify-without-jsonify/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/levn/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/load-json-file/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/locate-path/node_modules/path-exists/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/locate-path/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/lodash/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/mimic-fn/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/mute-stream/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/natural-compare/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/nice-try/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/normalize-package-data/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/object-assign/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/object-keys/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/once/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/onetime/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/optionator/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/os-tmpdir/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/p-limit/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/p-locate/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/p-try/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/parse-json/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/path-exists/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/path-is-absolute/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/path-is-inside/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/path-key/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/path-parse/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/path-type/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/pify/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/pinkie-promise/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/pinkie/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/pkg-dir/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/pluralize/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/prelude-ls/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/progress/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/punycode/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/read-pkg-up/node_modules/find-up/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/read-pkg-up/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/read-pkg/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/regexp.prototype.flags/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/regexpp/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/require-uncached/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/resolve-from/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/resolve/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/resolve/test/module_dir/zmodules/bbb/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/resolve/test/resolver/baz/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/resolve/test/resolver/browser_field/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/resolve/test/resolver/dot_main/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/resolve/test/resolver/dot_slash_main/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/resolve/test/resolver/incorrect_main/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/restore-cursor/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/rimraf/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/run-async/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/rxjs/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/safer-buffer/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/semver/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/shebang-command/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/shebang-regex/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/signal-exit/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/slice-ansi/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/spdx-correct/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/spdx-exceptions/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/spdx-expression-parse/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/spdx-license-ids/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/sprintf-js/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/string-width/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/string.prototype.matchall/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/strip-ansi/node_modules/ansi-regex/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/strip-ansi/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/strip-bom/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/strip-json-comments/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/supports-color/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/symbol-observable/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/table/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/text-table/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/through/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/tmp/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/type-check/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/uri-js/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/validate-npm-package-license/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/which/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/wordwrap/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/wrappy/package.json" />
+      <path value="$PROJECT_DIR$/lambda/custom/node_modules/write/package.json" />
       <path value="$PROJECT_DIR$/lambda/custom/package.json" />
     </packageJsonPaths>
   </component>
@@ -208,12 +412,13 @@
       <option name="presentableId" value="Default" />
       <updated>1534755941987</updated>
       <workItem from="1534755943551" duration="614000" />
-      <workItem from="1534756964257" duration="19798000" />
+      <workItem from="1534756964257" duration="20269000" />
+      <workItem from="1534789482131" duration="7379000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20412000" />
+    <option name="totallyTimeSpent" value="28262000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -223,37 +428,37 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -264,6 +469,48 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/models/en-US.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lambda/custom/helpers/topics.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lambda/custom/handlers/quizHandlers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lambda/custom/content/injuries.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lambda/custom/content/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lambda/custom/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2280">
+          <caret line="152" column="56" selection-start-line="152" selection-start-column="56" selection-end-line="152" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/skill.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -311,13 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lambda/custom/content/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lambda/custom/content/questions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -325,38 +565,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/en-US.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lambda/custom/helpers/topics.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lambda/custom/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="152" column="56" selection-start-line="152" selection-start-column="56" selection-end-line="152" selection-end-column="56" />
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lambda/custom/handlers/quizHandlers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        <state relative-caret-position="347">
+          <caret line="168" column="22" lean-forward="true" selection-start-line="168" selection-start-column="22" selection-end-line="168" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lambda/custom/content/injuries.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        <state>
+          <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/en-US.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="87" column="11" lean-forward="true" selection-start-line="87" selection-start-column="11" selection-end-line="87" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lambda/custom/content/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lambda/custom/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1438">
+          <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
         </state>
       </provider>
     </entry>

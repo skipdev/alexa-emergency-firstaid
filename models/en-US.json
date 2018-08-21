@@ -88,9 +88,34 @@
           ]
         },
         {
-          "name": "TestIntent",
+          "name": "ThanksIntent",
           "samples": [
-            "test"
+            "thanks",
+            "thank you",
+            "ok"
+          ]
+        },
+        {
+          "name": "EmergencyIntent",
+          "samples": [
+            "emergency",
+            "call an ambulance",
+            "ambulance",
+            "nine one one",
+            "call nine one one",
+            "urgent help",
+            "urgent"
+          ]
+        },
+        {
+          "name": "InjuryPromptIntent",
+          "samples": [
+            "injury",
+            "advice on an injury",
+            "injury advice",
+            "help with an injury",
+            "i have an injury",
+            "advice"
           ]
         },
         {
@@ -102,10 +127,11 @@
             }
           ],
           "samples": [
-            "i want a quiz on {injury}",
-            "quiz me on {injury}",
-            "quiz {injury}",
-            "{injury} quiz",
+            "help with a {injury}",
+            "help with an {injury}",
+            "help with {injury}",
+            "{injury} help",
+            "{injury} advice",
             "{injury}"
           ]
         }

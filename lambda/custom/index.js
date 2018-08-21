@@ -3,7 +3,6 @@ const Alexa = require('ask-sdk-core')
 const Interceptors = require('./interceptors')()
 const Handlers = require('./handlers')()
 const defaultHandlers = Handlers.getDefaultHandlers()
-const quizHandlers = Handlers.getQuizHandlers()
 
 const HelpIntentHandler = {
   canHandle (handlerInput) {
@@ -24,10 +23,29 @@ const HelpIntentHandler = {
   }
 }
 
+const ThanksIntentHandler = {
+  canHandle (handlerInput) {
+    return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
+      handlerInput.requestEnvelope.request.intent.name === 'ThanksIntent'
+  },
+  handle (handlerInput) {
+     const { attributesManager} = handlerInput
+     const requestAttributes = attributesManager.getRequestAttributes()
+     const speechText = requestAttributes.t('initial.NO_PROBLEM')
+
+    return handlerInput.responseBuilder
+      .speak(speechText)
+      .reprompt(speechText)
+      .getResponse()
+  }
+}
+
 const EmergencyIntentHandler = {
    canHandle (handlerInput) {
       return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
          (handlerInput.requestEnvelope.request.intent.name === 'YesIntent' ||
+         handlerInput.requestEnvelope.request.intent.name === 'EmergencyIntent' ||
+         handlerInput.requestEnvelope.request.intent.name === 'InjuryPromptIntent' ||
             handlerInput.requestEnvelope.request.intent.name === 'NoIntent')
    },
    handle (handlerInput) {
@@ -36,28 +54,35 @@ const EmergencyIntentHandler = {
       const requestName = handlerInput.requestEnvelope.request.intent.name
       sessionAttributes.speechText = ''
 
-      if (sessionAttributes.endIntro === 2) {
-         if (requestName === 'YesIntent') {
-            sessionAttributes.speechText = 'Okay, which injury?'
-         } else if (requestName === 'NoIntent') {
-            sessionAttributes.speechText = 'Okay.'
+      if (requestName === 'EmergencyIntent') {
+         sessionAttributes.speechText = 'Should I call 911?'
+         sessionAttributes.endIntro = 1
+      }
+      else if (requestName === 'InjuryPromptIntent') {
+         sessionAttributes.speechText = 'Okay, which injury?'
+      }
+      else if (requestName === 'YesIntent') {
+         if (sessionAttributes.yeetVar === 1) {
+            sessionAttributes.speechText = "Are you in an emergency, or would you like help with an injury?"
+            sessionAttributes.yeetVar = 0
          }
-      } else if (sessionAttributes.endIntro === 1) {
-         if (requestName === 'YesIntent') {
+         else if (sessionAttributes.endIntro === 1) {
             sessionAttributes.speechText = 'Okay, calling now.'
-         } else if (requestName === 'NoIntent') {
-            sessionAttributes.speechText = 'Okay, I won\'t call them.'
-         }
-      } else {
-         if (requestName === 'YesIntent') {
-            sessionAttributes.speechText = 'Should I call 911?'
-            sessionAttributes.endIntro = 1
-         }
-         else if (requestName === 'NoIntent') {
-            sessionAttributes.speechText = 'Would you like advice on an injury?'
-            sessionAttributes.endIntro = 2
          }
       }
+      else if (requestName === 'NoIntent') {
+         if (sessionAttributes.yeetVar === 1) {
+            sessionAttributes.speechText = "Okay, bye."
+            return handlerInput.responseBuilder
+               .speak(sessionAttributes.speechText)
+               .withShouldEndSession(true)
+               .getResponse()
+         }
+         else if (sessionAttributes.endIntro === 1) {
+            sessionAttributes.speechText = 'Okay, I won\'t call them.'
+         }
+      }
+
       attributesManager.setSessionAttributes(sessionAttributes)
       return responseBuilder
          .speak(sessionAttributes.speechText)
@@ -77,7 +102,6 @@ const InjuryIntentHandler = {
       const {responseBuilder, attributesManager} = handlerInput
       const requestAttributes = attributesManager.getRequestAttributes()
       const sessionAttributes = attributesManager.getSessionAttributes()
-      const requestName = handlerInput.requestEnvelope.request.intent.name
       const disclaimer = requestAttributes.t('initial.ADVICE_DISCLAIMER')
       sessionAttributes.injury = handlerInput.requestEnvelope.request.intent.slots.injury
       const injuryList = requestAttributes.t('initial.INJURIES')
@@ -107,9 +131,6 @@ const InjuryIntentHandler = {
 
       const userInjury = sessionAttributes.userInjury
 
-      // number of steps total for this particular injury
-      const noOfSteps = ((Object.keys(injuryList[userInjury]).length) - 1)
-
       // the user's current step
       sessionAttributes.counter = 0
       const counter = sessionAttributes.counter
@@ -129,7 +150,9 @@ const InjuryIntentHandler = {
 const NextIntentHandler = {
    canHandle (handlerInput) {
       return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
-         handlerInput.requestEnvelope.request.intent.name === 'NextIntent'
+         (handlerInput.requestEnvelope.request.intent.name === 'NextIntent' ||
+         handlerInput.requestEnvelope.request.intent.name === 'YesIntent' ||
+      handlerInput.requestEnvelope.request.intent.name === 'NoIntent')
    },
    handle (handlerInput) {
       const {responseBuilder, attributesManager} = handlerInput
@@ -142,19 +165,14 @@ const NextIntentHandler = {
       const counter = sessionAttributes.counter
       sessionAttributes.currentStep = injuryList[userInjury][counter].text
       const currentStep = sessionAttributes.currentStep
+      sessionAttributes.yeetVar = 0
 
-      // if (counter === noOfSteps) {
-            // //    sessionAttributes.speechText = 'Final step: ' + currentStep
-            // // } else {
-            // sessionAttributes.counter = 1
-            // const counter = sessionAttributes.counter
-            // sessionAttributes.currentStep = injuryList[userInjury][counter].text
-            // const currentStep = sessionAttributes.currentStep
-            // sessionAttributes.speechText = 'Next step: ' + currentStep
-            // sessionAttributes.counter += 1
-            //
-
-      sessionAttributes.speechText = currentStep
+      if (counter === noOfSteps) {
+        sessionAttributes.speechText = 'Final step: ' + currentStep + '. You have now completed all the necessary steps. Would you like help with anything else?'
+        sessionAttributes.yeetVar = 1
+      } else {
+         sessionAttributes.speechText = currentStep
+      }
 
       attributesManager.setSessionAttributes(sessionAttributes)
       return responseBuilder
@@ -181,17 +199,15 @@ const CancelAndStopIntentHandler = {
     let scoreNumber = ''
 
     if (sessionAttributes.score) {
-      scoreNumber = sessionAttributes.score
-      questionTotal = sessionAttributes.quizLength
+       scoreNumber = sessionAttributes.score
+       questionTotal = sessionAttributes.quizLength
+    }
 
       if (scoreNumber === questionTotal) {
         speechText = requestAttributes.t('initial.ALL_ANSWERS_CORRECT') + ' ' + byeMessages[byeNumber] + '!'
       } else {
-        speechText = `${requestAttributes.t('initial.NO_MESSAGE', { score: scoreNumber, questionNumber: questionTotal })}` + ' ' + byeMessages[byeNumber] + '!'
-      }
-    } else {
       speechText = byeMessages[byeNumber]
-    }
+      }
 
     return responseBuilder
       .speak(speechText)
@@ -234,6 +250,7 @@ exports.handler = skillBuilder
     InjuryIntentHandler,
     NextIntentHandler,
     HelpIntentHandler,
+    ThanksIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler
   )
