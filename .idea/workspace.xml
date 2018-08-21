@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a50bd02-9835-42da-9a15-27bf2a9c3979" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.ask/config" beforeDir="false" afterPath="$PROJECT_DIR$/.ask/config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lambda/custom/content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/custom/content/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lambda/custom/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/custom/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/en-US.json" beforeDir="false" afterPath="$PROJECT_DIR$/models/en-US.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,8 +28,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lambda/custom/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1438">
-              <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+            <state relative-caret-position="600">
+              <caret line="88" column="48" lean-forward="true" selection-start-line="88" selection-start-column="48" selection-end-line="88" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -413,12 +409,12 @@
       <updated>1534755941987</updated>
       <workItem from="1534755943551" duration="614000" />
       <workItem from="1534756964257" duration="20269000" />
-      <workItem from="1534789482131" duration="7379000" />
+      <workItem from="1534789482131" duration="7548000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28262000" />
+    <option name="totallyTimeSpent" value="28431000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -602,8 +598,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lambda/custom/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1438">
-          <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+        <state relative-caret-position="600">
+          <caret line="88" column="48" lean-forward="true" selection-start-line="88" selection-start-column="48" selection-end-line="88" selection-end-column="48" />
         </state>
       </provider>
     </entry>

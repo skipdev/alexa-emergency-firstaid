@@ -56,29 +56,29 @@ const EmergencyIntentHandler = {
 
       if (requestName === 'EmergencyIntent') {
          sessionAttributes.speechText = 'Should I call 911?'
-         sessionAttributes.endIntro = 1
+         sessionAttributes.emergencyCall = 1
       }
       else if (requestName === 'InjuryPromptIntent') {
          sessionAttributes.speechText = 'Okay, which injury?'
       }
       else if (requestName === 'YesIntent') {
-         if (sessionAttributes.yeetVar === 1) {
+         if (sessionAttributes.resetFlow === 1) {
             sessionAttributes.speechText = "Are you in an emergency, or would you like help with an injury?"
-            sessionAttributes.yeetVar = 0
+            sessionAttributes.resetFlow = 0
          }
-         else if (sessionAttributes.endIntro === 1) {
+         else if (sessionAttributes.emergencyCall === 1) {
             sessionAttributes.speechText = 'Okay, calling now.'
          }
       }
       else if (requestName === 'NoIntent') {
-         if (sessionAttributes.yeetVar === 1) {
+         if (sessionAttributes.resetFlow === 1) {
             sessionAttributes.speechText = "Okay, bye."
             return handlerInput.responseBuilder
                .speak(sessionAttributes.speechText)
                .withShouldEndSession(true)
                .getResponse()
          }
-         else if (sessionAttributes.endIntro === 1) {
+         else if (sessionAttributes.emergencyCall === 1) {
             sessionAttributes.speechText = 'Okay, I won\'t call them.'
          }
       }
@@ -165,11 +165,11 @@ const NextIntentHandler = {
       const counter = sessionAttributes.counter
       sessionAttributes.currentStep = injuryList[userInjury][counter].text
       const currentStep = sessionAttributes.currentStep
-      sessionAttributes.yeetVar = 0
+      sessionAttributes.resetFlow = 0
 
       if (counter === noOfSteps) {
         sessionAttributes.speechText = 'Final step: ' + currentStep + '. You have now completed all the necessary steps. Would you like help with anything else?'
-        sessionAttributes.yeetVar = 1
+        sessionAttributes.resetFlow = 1
       } else {
          sessionAttributes.speechText = currentStep
       }
