@@ -144,7 +144,7 @@ const InjuryIntentHandler = {
       // the user's current step
       sessionAttributes.counter = 0
       const counter = sessionAttributes.counter
-      sessionAttributes.currentStep = injuryList[userInjury][1].stepList[counter].text
+      sessionAttributes.currentStep = injuryList[userInjury][counter].text
       const currentStep = sessionAttributes.currentStep
 
       sessionAttributes.speechText = disclaimer + ' ' + firstStepText + ' ' + currentStep + ' ' + sayNext
@@ -174,7 +174,7 @@ const NextIntentHandler = {
       const noOfSteps = ((Object.keys(injuryList[userInjury]).length) - 1)
       sessionAttributes.counter += 1
       const counter = sessionAttributes.counter
-      sessionAttributes.currentStep = injuryList[userInjury][1].stepList[counter].text
+      sessionAttributes.currentStep = injuryList[userInjury][counter].text
       const currentStep = sessionAttributes.currentStep
       sessionAttributes.resetFlow = 0
 
@@ -208,7 +208,7 @@ const RepeatIntentHandler = {
       const userInjury = sessionAttributes.userInjury
       const noOfSteps = ((Object.keys(injuryList[userInjury]).length) - 1)
       const counter = sessionAttributes.counter
-      sessionAttributes.currentStep = injuryList[userInjury][1].stepList[counter].text
+      sessionAttributes.currentStep = injuryList[userInjury][counter].text
       const currentStep = sessionAttributes.currentStep
       sessionAttributes.resetFlow = 0
 
@@ -243,7 +243,7 @@ const PreviousIntentHandler = {
       const noOfSteps = ((Object.keys(injuryList[userInjury]).length) - 1)
       sessionAttributes.counter -= 1
       const counter = sessionAttributes.counter
-      sessionAttributes.currentStep = injuryList[userInjury][1].stepList[counter].text
+      sessionAttributes.currentStep = injuryList[userInjury][counter].text
       const currentStep = sessionAttributes.currentStep
       sessionAttributes.resetFlow = 0
 
