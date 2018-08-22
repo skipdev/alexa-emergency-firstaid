@@ -7,72 +7,174 @@
           "values": [
             {
               "name": {
-                "value": "allergies"
+                "value": "allergies",
+                "synonyms": [
+                  "allergy",
+                  "allergic reaction",
+                  "allergic"
+                ]
               }
             },
             {
               "name": {
-                "value": "animal bite"
+                "value": "animal bite",
+                "synonyms": [
+                  "bite",
+                  "bitten",
+                  "bites",
+                  "animal",
+                  "animal bites",
+                  "bitten by an animal"
+                ]
               }
             },
             {
               "name": {
-                "value": "asthma attack"
+                "value": "asthma attack",
+                "synonyms": [
+                  "asthma",
+                  "breathing",
+                  "I can't breathe",
+                  "can't breathe"
+                ]
               }
             },
             {
               "name": {
-                "value": "bleeding"
+                "value": "bleeding",
+                "synonyms": [
+                  "blood",
+                  "blood on me",
+                  "blood loss",
+                  "cut",
+                  "wounded",
+                  "stabbed"
+                ]
               }
             },
             {
               "name": {
-                "value": "broken bones"
+                "value": "broken bones",
+                "synonyms": [
+                  "broken",
+                  "bone",
+                  "bones",
+                  "broken bone",
+                  "broken a bone",
+                  "breakage",
+                  "break",
+                  "break a bone",
+                  "breakages",
+                  "broken limb"
+                ]
               }
             },
             {
               "name": {
-                "value": "burns"
+                "value": "burns",
+                "synonyms": [
+                  "burn",
+                  "burned"
+                ]
               }
             },
             {
               "name": {
-                "value": "choking"
+                "value": "choking",
+                "synonyms": [
+                  "choke",
+                  "can't swallow",
+                  "problems swallowing"
+                ]
               }
             },
             {
               "name": {
-                "value": "concussion"
+                "value": "concussion",
+                "synonyms": [
+                  "head injury",
+                  "head hurts",
+                  "bumped head",
+                  "I bumped my head",
+                  "bumped their head",
+                  "head bumped",
+                  "bump on the head",
+                  "hit their head"
+                ]
               }
             },
             {
               "name": {
-                "value": "diabetes"
+                "value": "diabetes",
+                "synonyms": [
+                  "diabetic"
+                ]
               }
             },
             {
               "name": {
-                "value": "distress"
+                "value": "distress",
+                "synonyms": [
+                  "anxiety",
+                  "anxious",
+                  "worry",
+                  "worrying",
+                  "worried",
+                  "scared",
+                  "upset",
+                  "stress",
+                  "stressed",
+                  "stressing"
+                ]
               }
             },
             {
               "name": {
-                "value": "ebola"
+                "value": "ebola",
+                "synonyms": [
+                  "ebola attack",
+                  "contagious disease",
+                  "infectious disease",
+                  "contagious",
+                  "infectious",
+                  "endemic",
+                  "toxic"
+                ]
               }
             },
             {
               "name": {
-                "value": "heart attack"
+                "value": "heart attack",
+                "synonyms": [
+                  "cardiovascular disease",
+                  "cardiovascular",
+                  "congestive heart failure",
+                  "heart failure",
+                  "heart",
+                  "heart problems"
+                ]
               }
             },
             {
               "name": {
-                "value": "heat stroke"
+                "value": "heat stroke",
+                "synonyms": [
+                  "heat exhaustion"
+                ]
               }
             },
             {
               "name": {
-                "value": "hypothermia"
+                "value": "hypothermia",
+                "synonyms": [
+                  "low temperature",
+                  "cold",
+                  "too cold",
+                  "shivering",
+                  "hypothermic",
+                  "hypothermic shock",
+                  "drop in temperature"
+                ]
               }
             },
             {
@@ -82,22 +184,52 @@
             },
             {
               "name": {
-                "value": "poisoning"
+                "value": "poisoning",
+                "synonyms": [
+                  "poison",
+                  "food poisoning",
+                  "unknown substance",
+                  "unknown substance",
+                  "took a substance",
+                  "took a weird substance",
+                  "took an unknown substance"
+                ]
               }
             },
             {
               "name": {
-                "value": "seizure"
+                "value": "seizure",
+                "synonyms": [
+                  "convulsion",
+                  "convulsive",
+                  "spasm",
+                  "spasmic",
+                  "epilepsy",
+                  "epileptic",
+                  "febrile"
+                ]
               }
             },
             {
               "name": {
-                "value": "sting"
+                "value": "sting",
+                "synonyms": [
+                  "insect sting",
+                  "insect stung",
+                  "stung"
+                ]
               }
             },
             {
               "name": {
-                "value": "sprain"
+                "value": "sprain",
+                "synonyms": [
+                  "strain",
+                  "overstretch",
+                  "overstretched",
+                  "twisted",
+                  "twist"
+                ]
               }
             },
             {
@@ -107,7 +239,17 @@
             },
             {
               "name": {
-                "value": "unresponsive"
+                "value": "unresponsive",
+                "synonyms": [
+                  "not breathing",
+                  "isn't breathing",
+                  "won't respond",
+                  "isn't responding",
+                  "isn't moving",
+                  "won't move",
+                  "won't wake up",
+                  "isn't waking up"
+                ]
               }
             }
           ],
@@ -151,6 +293,9 @@
             "yes",
             "yeah",
             "yep",
+            "ok",
+            "done",
+            "okay",
             "yup"
           ]
         },
@@ -200,8 +345,7 @@
           "name": "ThanksIntent",
           "samples": [
             "thanks",
-            "thank you",
-            "ok"
+            "thank you"
           ]
         },
         {
@@ -224,6 +368,7 @@
             "injury advice",
             "help with an injury",
             "i have an injury",
+            "someone's been injured",
             "advice"
           ]
         },
@@ -239,8 +384,26 @@
             "help with a {injury}",
             "help with an {injury}",
             "help with {injury}",
+            "I'm {injury}",
+            "I've {injury}",
+            "I've been {injury}",
+            "I've got a {injury}",
+            "I've got an {injury}",
+            "I have an {injury}",
+            "I have a {injury}",
+            "I have {injury}",
+            "Someone {injury}",
+            "Someone has an {injury}",
+            "Someone has a {injury}",
+            "Someone has {injury}",
+            "Someone's been {injury}",
+            "Someone's got a {injury}",
+            "Someone's got an {injury}",
+            "Someone's {injury}",
+            "I was {injury}",
             "{injury} help",
             "{injury} advice",
+            "{injury} attack",
             "{injury}"
           ]
         }

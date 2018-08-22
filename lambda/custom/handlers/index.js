@@ -20,9 +20,6 @@ module.exports = () => {
           }
         }
       }
-    },
-    getQuizHandlers: () => {
-      return require('./quizHandlers')()
     }
   }
 }
