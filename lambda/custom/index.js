@@ -52,10 +52,9 @@ const EmergencyIntentHandler = {
       const sessionAttributes = attributesManager.getSessionAttributes()
       const requestAttributes = attributesManager.getRequestAttributes()
       const injuryQuestion = requestAttributes.t('initial.INJURY_QUESTION')
-      const options = requestAttributes.t('initial.OPTIONS')
+      const emergencyPrompt = requestAttributes.t('initial.EMERGENCY_PROMPT')
       const okay = requestAttributes.t('initial.OKAY')
       const callPrompt = requestAttributes.t('initial.CALL_PROMPT')
-      const helpPrompt = requestAttributes.t('initial.HELP_PROMPT')
       const callConfirmed = requestAttributes.t('initial.CALL_CONFIRMED')
       const callDeclined = requestAttributes.t('initial.CALL_DECLINED')
       const injuryPrompt = requestAttributes.t('initial.INJURY_PROMPT')
@@ -72,14 +71,17 @@ const EmergencyIntentHandler = {
       }
       else if (requestName === 'YesIntent') {
          if (sessionAttributes.resetFlow === 1) {
-            sessionAttributes.speechText = options
+            sessionAttributes.speechText = emergencyPrompt
             sessionAttributes.resetFlow = 0
+
          }
          else if (sessionAttributes.injuryFlow === 1) {
             sessionAttributes.speechText = okay + ', ' + injuryPrompt
          }
          else if (sessionAttributes.emergencyFlow === 1) {
             sessionAttributes.speechText = okay + ', ' + callConfirmed
+            sessionAttributes.resetFlow = 1
+            sessionAttributes.emergencyFlow = 0
          }
          else {
             sessionAttributes.speechText = callPrompt
@@ -97,6 +99,7 @@ const EmergencyIntentHandler = {
          else if (sessionAttributes.emergencyFlow === 1) {
             sessionAttributes.speechText = callDeclined
             sessionAttributes.resetFlow = 1
+            sessionAttributes.emergencyFlow = 0
          }
          else {
             sessionAttributes.speechText = injuryQuestion
@@ -178,6 +181,7 @@ const NextIntentHandler = {
       if (counter === noOfSteps) {
         sessionAttributes.speechText = finalStepText + ' ' + currentStep + ' ' + repeatPrompt + ' ' + helpPrompt
         sessionAttributes.resetFlow = 1
+        sessionAttributes.emergencyFlow = 0
       } else {
          sessionAttributes.speechText = currentStep
       }
@@ -211,6 +215,7 @@ const RepeatIntentHandler = {
       if (counter === noOfSteps) {
         sessionAttributes.speechText = currentStep + ' ' + repeatPrompt + ' ' + helpPrompt
         sessionAttributes.resetFlow = 1
+         sessionAttributes.emergencyFlow = 0
       } else {
          sessionAttributes.speechText = currentStep
       }
@@ -245,6 +250,7 @@ const PreviousIntentHandler = {
       if (counter === noOfSteps) {
         sessionAttributes.speechText = currentStep + ' ' + repeatPrompt + ' ' + helpPrompt
         sessionAttributes.resetFlow = 1
+         sessionAttributes.emergencyFlow = 0
       } else {
          sessionAttributes.speechText = currentStep
       }

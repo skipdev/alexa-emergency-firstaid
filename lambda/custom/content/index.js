@@ -5,9 +5,9 @@ exports.strings = {
     translation: {
       initial: {
         SKILL_NAME: 'Emergency First-aid',
-        HELLO: 'Welcome to {{skillName}}. Are you currently in an emergency?',
+        HELLO: 'Welcome to {{skillName}}.',
         INJURY_QUESTION: 'Would you like advice on a certain injury?',
-        OPTIONS: 'Are you currently in an emergency, or would you like advice on a certain injury?',
+        EMERGENCY_PROMPT: 'Are you currently in an emergency?',
         HELP: 'I can call an ambulance if you\'re in an emergency, or you can ask me for advice on a certain injury. To move between steps, you can say \"next step\", \"repeat\", or \"previous step\".',
         INJURIES: injuries.INJURIES_EN_US,
         ADVICE_DISCLAIMER: 'Please call 911 if you are in an emergency, this is not a substitute for professional medical advice.',

@@ -9,12 +9,16 @@ module.exports = () => {
           handle (handlerInput) {
             const { responseBuilder, attributesManager } = handlerInput
             const requestAttributes = attributesManager.getRequestAttributes()
-            let skillName = requestAttributes.t('initial.SKILL_NAME')
-            const speechText = requestAttributes.t('initial.HELLO', {skillName})
-            const repromptText = requestAttributes.t('initial.OPTIONS')
+            const sessionAttributes = attributesManager.getSessionAttributes()
+            const skillName = requestAttributes.t('initial.SKILL_NAME')
+            const emergencyPrompt = requestAttributes.t('initial.EMERGENCY_PROMPT')
+            const welcomeMessage = requestAttributes.t('initial.HELLO', {skillName})
+
+            sessionAttributes.speechText = welcomeMessage + ' ' + emergencyPrompt
+            const repromptText = emergencyPrompt
 
             return responseBuilder
-              .speak(speechText)
+              .speak(sessionAttributes.speechText)
               .reprompt(repromptText)
               .getResponse()
           }
