@@ -4,8 +4,10 @@
     <list default="true" id="0a50bd02-9835-42da-9a15-27bf2a9c3979" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.ask/config" beforeDir="false" afterPath="$PROJECT_DIR$/.ask/config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lambda/custom/content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/custom/content/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lambda/custom/content/injuries.js" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/custom/content/injuries.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lambda/custom/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/custom/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/en-US.json" beforeDir="false" afterPath="$PROJECT_DIR$/models/en-US.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,17 +24,8 @@
       <file leaf-file-name="en-US.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/en-US.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5205">
-              <caret line="347" column="23" selection-start-line="347" selection-start-column="23" selection-end-line="347" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="topics.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lambda/custom/helpers/topics.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+            <state relative-caret-position="3453">
+              <caret line="231" column="17" lean-forward="true" selection-start-line="231" selection-start-column="17" selection-end-line="231" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -40,26 +33,8 @@
       <file leaf-file-name="injuries.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lambda/custom/content/injuries.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="questions.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lambda/custom/content/questions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="quizHandlers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lambda/custom/handlers/quizHandlers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="180" column="31" selection-start-line="180" selection-start-column="25" selection-end-line="180" selection-end-column="31" />
+            <state relative-caret-position="156">
+              <caret line="678" column="11" selection-start-line="678" selection-start-column="7" selection-end-line="678" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -67,8 +42,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lambda/custom/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
+            <state relative-caret-position="465">
+              <caret line="149" column="59" selection-start-line="149" selection-start-column="59" selection-end-line="149" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -76,8 +51,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lambda/custom/handlers/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="83" selection-start-line="13" selection-start-column="83" selection-end-line="13" selection-end-column="83" />
+            <state relative-caret-position="135">
+              <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -94,8 +69,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lambda/custom/content/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+            <state relative-caret-position="242">
+              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -109,8 +84,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>name</find>
-      <find>sessionattributes</find>
       <find>sessiona</find>
       <find>YesIntentHandler</find>
       <find>refreshgame</find>
@@ -127,19 +100,31 @@
       <find>injuryList[userInjury][counter]</find>
       <find>[userInjury]['stepList'][counter].text</find>
       <find>.question</find>
-      <find>answer</find>
       <find>const counter</find>
       <find>injuryList[userInjury][counter].text</find>
+      <find>answer</find>
+      <find>100.4 degrees fahrenheit</find>
+      <find>color</find>
+      <find>resetflow</find>
+      <find>unresponsive</find>
+      <find>unrespo</find>
+      <find>unres</find>
+      <find>burn</find>
+      <find>noofsteps</find>
+      <find>injuryprompt</find>
+      <find>disclaimer</find>
+      <find>FIRST_STEP_TEXT</find>
     </findStrings>
     <replaceStrings>
       <replace>EmergencyIntentHandler</replace>
-      <replace>999</replace>
       <replace>emergencyCall</replace>
       <replace>Assess the symptoms. Someone with meningitis</replace>
       <replace>emergencyPrompt</replace>
       <replace>injuryList[userInjury][1][counter]</replace>
       <replace>[userInjury].stepList[counter].text</replace>
       <replace>let counter</replace>
+      <replace>38 degrees celcius</replace>
+      <replace>999</replace>
       <replace>injuryList[userInjury][1].stepList[counter].text</replace>
     </replaceStrings>
   </component>
@@ -152,10 +137,10 @@
         <option value="$PROJECT_DIR$/lambda/custom/interceptors/index.js" />
         <option value="$PROJECT_DIR$/lambda/custom/handlers/quizHandlers.js" />
         <option value="$PROJECT_DIR$/lambda/custom/helpers/topics.js" />
-        <option value="$PROJECT_DIR$/models/en-US.json" />
-        <option value="$PROJECT_DIR$/lambda/custom/content/index.js" />
         <option value="$PROJECT_DIR$/lambda/custom/handlers/index.js" />
+        <option value="$PROJECT_DIR$/models/en-US.json" />
         <option value="$PROJECT_DIR$/lambda/custom/content/injuries.js" />
+        <option value="$PROJECT_DIR$/lambda/custom/content/index.js" />
         <option value="$PROJECT_DIR$/lambda/custom/index.js" />
       </list>
     </option>
@@ -272,12 +257,12 @@
       <workItem from="1534755943551" duration="614000" />
       <workItem from="1534756964257" duration="20269000" />
       <workItem from="1534789482131" duration="18093000" />
-      <workItem from="1534924923746" duration="11373000" />
+      <workItem from="1534924923746" duration="18493000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50349000" />
+    <option name="totallyTimeSpent" value="57469000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -449,34 +434,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lambda/custom/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lambda/custom/indexcopy.js">
+    <entry file="file://$PROJECT_DIR$/lambda/custom/handlers/quizHandlers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-262">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lambda/custom/handlers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="83" selection-start-line="13" selection-start-column="83" selection-end-line="13" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lambda/custom/content/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/en-US.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5205">
-          <caret line="347" column="23" selection-start-line="347" selection-start-column="23" selection-end-line="347" selection-end-column="23" />
+        <state relative-caret-position="250">
+          <caret line="180" column="31" selection-start-line="180" selection-start-column="25" selection-end-line="180" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -487,13 +448,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lambda/custom/handlers/quizHandlers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="180" column="31" selection-start-line="180" selection-start-column="25" selection-end-line="180" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lambda/custom/helpers/topics.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -501,17 +455,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lambda/custom/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/en-US.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3453">
+          <caret line="231" column="17" lean-forward="true" selection-start-line="231" selection-start-column="17" selection-end-line="231" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lambda/custom/content/injuries.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        <state relative-caret-position="156">
+          <caret line="678" column="11" selection-start-line="678" selection-start-column="7" selection-end-line="678" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lambda/custom/indexcopy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-262">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lambda/custom/handlers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lambda/custom/content/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lambda/custom/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
+        <state relative-caret-position="465">
+          <caret line="149" column="59" selection-start-line="149" selection-start-column="59" selection-end-line="149" selection-end-column="59" />
         </state>
       </provider>
     </entry>

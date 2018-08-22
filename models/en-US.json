@@ -239,8 +239,9 @@
             },
             {
               "name": {
-                "value": "unresponsive",
+                "value": "unresponsiveness",
                 "synonyms": [
+                  "unresponsive",
                   "not breathing",
                   "isn't breathing",
                   "won't respond",
@@ -305,6 +306,14 @@
             "no",
             "nope",
             "nah"
+          ]
+        },
+        {
+          "name": "SymptomIntent",
+          "samples": [
+            "tell me the symptoms",
+            "symptoms",
+            "symptom"
           ]
         },
         {

@@ -54,6 +54,7 @@ const EmergencyIntentHandler = {
       const injuryQuestion = requestAttributes.t('initial.INJURY_QUESTION')
       const emergencyPrompt = requestAttributes.t('initial.EMERGENCY_PROMPT')
       const okay = requestAttributes.t('initial.OKAY')
+      const disclaimer = requestAttributes.t('initial.ADVICE_DISCLAIMER')
       const callPrompt = requestAttributes.t('initial.CALL_PROMPT')
       const callConfirmed = requestAttributes.t('initial.CALL_CONFIRMED')
       const callDeclined = requestAttributes.t('initial.CALL_DECLINED')
@@ -67,7 +68,7 @@ const EmergencyIntentHandler = {
          sessionAttributes.emergencyFlow = 1
       }
       else if (requestName === 'InjuryPromptIntent') {
-         sessionAttributes.speechText = okay + ', ' + injuryPrompt
+         sessionAttributes.speechText = disclaimer + ' ' + injuryPrompt
       }
       else if (requestName === 'YesIntent') {
          if (sessionAttributes.resetFlow === 1) {
@@ -76,7 +77,7 @@ const EmergencyIntentHandler = {
 
          }
          else if (sessionAttributes.injuryFlow === 1) {
-            sessionAttributes.speechText = okay + ', ' + injuryPrompt
+            sessionAttributes.speechText = disclaimer + ' ' + injuryPrompt
          }
          else if (sessionAttributes.emergencyFlow === 1) {
             sessionAttributes.speechText = okay + ', ' + callConfirmed
@@ -126,7 +127,6 @@ const InjuryIntentHandler = {
       const {responseBuilder, attributesManager} = handlerInput
       const requestAttributes = attributesManager.getRequestAttributes()
       const sessionAttributes = attributesManager.getSessionAttributes()
-      const disclaimer = requestAttributes.t('initial.ADVICE_DISCLAIMER')
       const firstStepText = requestAttributes.t('initial.FIRST_STEP_TEXT')
       const sayNext = requestAttributes.t('initial.SAY_NEXT')
       sessionAttributes.injury = handlerInput.requestEnvelope.request.intent.slots.injury
@@ -147,7 +147,7 @@ const InjuryIntentHandler = {
       sessionAttributes.currentStep = injuryList[userInjury][1].stepList[counter].text
       const currentStep = sessionAttributes.currentStep
 
-      sessionAttributes.speechText = disclaimer + ' ' + firstStepText + ' ' + currentStep + ' ' + sayNext
+      sessionAttributes.speechText = firstStepText + ' ' + userInjury + '. ' + currentStep + ' ' + sayNext
 
       attributesManager.setSessionAttributes(sessionAttributes)
       return responseBuilder
@@ -171,7 +171,7 @@ const NextIntentHandler = {
       const repeatPrompt = requestAttributes.t('initial.REPEAT_PROMPT')
       const helpPrompt = requestAttributes.t('initial.HELP_PROMPT')
       const userInjury = sessionAttributes.userInjury
-      const noOfSteps = ((Object.keys(injuryList[userInjury]).length) - 1)
+      const noOfSteps = ((Object.keys(injuryList[userInjury][1].stepList).length) - 1)
       sessionAttributes.counter += 1
       const counter = sessionAttributes.counter
       sessionAttributes.currentStep = injuryList[userInjury][1].stepList[counter].text
@@ -193,6 +193,7 @@ const NextIntentHandler = {
          .getResponse()
    }
 }
+
 const RepeatIntentHandler = {
    canHandle (handlerInput) {
       return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
@@ -206,7 +207,7 @@ const RepeatIntentHandler = {
       const repeatPrompt = requestAttributes.t('initial.REPEAT_PROMPT')
       const helpPrompt = requestAttributes.t('initial.HELP_PROMPT')
       const userInjury = sessionAttributes.userInjury
-      const noOfSteps = ((Object.keys(injuryList[userInjury]).length) - 1)
+      const noOfSteps = ((Object.keys(injuryList[userInjury][1].stepList).length) - 1)
       const counter = sessionAttributes.counter
       sessionAttributes.currentStep = injuryList[userInjury][1].stepList[counter].text
       const currentStep = sessionAttributes.currentStep
@@ -227,6 +228,41 @@ const RepeatIntentHandler = {
          .getResponse()
    }
 }
+
+const SymptomIntentHandler = {
+   canHandle (handlerInput) {
+      return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
+         handlerInput.requestEnvelope.request.intent.name === 'SymptomIntent'
+   },
+   handle (handlerInput) {
+      const {responseBuilder, attributesManager} = handlerInput
+      const requestAttributes = attributesManager.getRequestAttributes()
+      const sessionAttributes = attributesManager.getSessionAttributes()
+      const userInjury = sessionAttributes.userInjury
+      const injuryList = requestAttributes.t('initial.INJURIES')
+      const symptomIntro = requestAttributes.t('initial.SYMPTOM_INTRO')
+      const include = requestAttributes.t('initial.INCLUDE')
+      const callIfInDoubt = requestAttributes.t('initial.CALL_IF_IN_DOUBT')
+      sessionAttributes.resetFlow = 0
+
+      sessionAttributes.symptom = injuryList[userInjury][0].symptoms
+      const symptom = sessionAttributes.symptom
+
+      if (sessionAttributes.userInjury === ('bleeding' || 'animal bite' || 'burn')) {
+         sessionAttributes.speechText = symptom + ' ' + callIfInDoubt
+      }
+      else {
+         sessionAttributes.speechText = symptomIntro + ' ' + userInjury + ' ' + include + ' ' + symptom + ' ' + callIfInDoubt
+      }
+
+      attributesManager.setSessionAttributes(sessionAttributes)
+      return responseBuilder
+         .speak(sessionAttributes.speechText)
+         .reprompt(sessionAttributes.speechText)
+         .getResponse()
+   }
+}
+
 const PreviousIntentHandler = {
    canHandle (handlerInput) {
       return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
@@ -240,7 +276,7 @@ const PreviousIntentHandler = {
       const repeatPrompt = requestAttributes.t('initial.REPEAT_PROMPT')
       const helpPrompt = requestAttributes.t('initial.HELP_PROMPT')
       const userInjury = sessionAttributes.userInjury
-      const noOfSteps = ((Object.keys(injuryList[userInjury]).length) - 1)
+      const noOfSteps = ((Object.keys(injuryList[userInjury][1].stepList).length) - 1)
       sessionAttributes.counter -= 1
       const counter = sessionAttributes.counter
       sessionAttributes.currentStep = injuryList[userInjury][1].stepList[counter].text
@@ -318,6 +354,7 @@ exports.handler = skillBuilder
     InjuryIntentHandler,
     NextIntentHandler,
     RepeatIntentHandler,
+    SymptomIntentHandler,
     PreviousIntentHandler,
     HelpIntentHandler,
     ThanksIntentHandler,
