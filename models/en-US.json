@@ -310,10 +310,28 @@
         },
         {
           "name": "SymptomIntent",
+          "slots": [
+            {
+              "name": "injury",
+              "type": "LIST_OF_INJURIES"
+            }
+          ],
           "samples": [
             "tell me the symptoms",
             "symptoms",
-            "symptom"
+            "symptom",
+            "tell me the symptoms of {injury}",
+            "symptoms of {injury}",
+            "{injury} symptoms",
+            "how do I know if someone has {injury}",
+            "how do I know if someone has a {injury}",
+            "how do I know if someone has an {injury}",
+            "how do I know if I have {injury}",
+            "how do I know if I have a {injury}",
+            "how do I know if I have an {injury}",
+            "do I have {injury}",
+            "do I have a {injury}",
+            "do I have an {injury}"
           ]
         },
         {
@@ -412,8 +430,22 @@
             "I was {injury}",
             "{injury} help",
             "{injury} advice",
-            "{injury} attack",
-            "{injury}"
+            "{injury} attack"
+          ]
+        },
+        {
+          "name": "SymptomOrAdviceIntent",
+          "slots": [
+            {
+              "name": "injury",
+              "type": "LIST_OF_INJURIES"
+            }
+          ],
+          "samples": [
+            "{injury}",
+            "a {injury}",
+            "an {injury}",
+            "the {injury}"
           ]
         }
       ]
