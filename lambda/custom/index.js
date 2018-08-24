@@ -55,6 +55,7 @@ const EmergencyIntentHandler = {
       const sessionAttributes = attributesManager.getSessionAttributes()
       const requestAttributes = attributesManager.getRequestAttributes()
       const injuryQuestion = requestAttributes.t('initial.INJURY_QUESTION')
+      const symptomQuestion = requestAttributes.t('initial.SYMPTOM_QUESTION')
       const emergencyPrompt = requestAttributes.t('initial.EMERGENCY_PROMPT')
       const okay = requestAttributes.t('initial.OKAY')
       const help = requestAttributes.t('initial.HELP')
@@ -64,6 +65,7 @@ const EmergencyIntentHandler = {
       const callConfirmed = requestAttributes.t('initial.CALL_CONFIRMED')
       const callDeclined = requestAttributes.t('initial.CALL_DECLINED')
       const injuryPrompt = requestAttributes.t('initial.INJURY_PROMPT')
+      const symptomPrompt = requestAttributes.t('initial.SYMPTOM_PROMPT')
       const userEnding = requestAttributes.t('initial.USER_ENDING')
       const requestName = handlerInput.requestEnvelope.request.intent.name
       sessionAttributes.speechText = ''
@@ -84,6 +86,7 @@ const EmergencyIntentHandler = {
          if (sessionAttributes.userNeedsHelp === 1) {
             sessionAttributes.speechText = help + ' ' + help2
             sessionAttributes.userNeedsHelp = 0
+            sessionAttributes.userWantsSymptoms = 1
          }
          else if (sessionAttributes.resetFlow === 1) {
             sessionAttributes.speechText = emergencyPrompt
@@ -95,6 +98,15 @@ const EmergencyIntentHandler = {
             sessionAttributes.speechText = disclaimer + ' ' + injuryPrompt
             //START THE INJURY ADVICE INTENT
             sessionAttributes.startAdviceIntent = 1
+            sessionAttributes.injuryFlow = 0
+         }
+         else if (sessionAttributes.symptomFlow === 1) {
+            //ASK WHICH INJURY THEY WOULD LIKE TO HEAR SYMPTOMS FOR
+            sessionAttributes.speechText = symptomPrompt
+            //START THE SYMPTOM INTENT
+            sessionAttributes.startSymptomIntent = 1
+            sessionAttributes.startInjuryIntent = 0
+            sessionAttributes.symptomFlow = 0
          }
          else if (sessionAttributes.emergencyFlow === 1) {
             //IF THE USER HAS SAID THAT THEY HAVE CALLED 911
@@ -116,7 +128,19 @@ const EmergencyIntentHandler = {
                .withShouldEndSession(true)
                .getResponse()
          }
+         else if (sessionAttributes.injuryFlow === 1) {
+            //IF THEY SAY NO TO WANTING ADVICE, ASK IF THEY WANT TO KNOW SYMPTOMS
+            sessionAttributes.speechText = symptomQuestion
+            sessionAttributes.symptomFlow = 1
+            sessionAttributes.injuryFlow = 0
+         }
+         else if (sessionAttributes.symptomFlow === 1) {
+            //IF THEY SAY NO TO BOTH WANTING ADVICE AND WANTING SYMPTOMS, ASK WHAT THEY WANT
+            sessionAttributes.speechText = help + ' ' + help2
+            sessionAttributes.symptomFlow = 0
+         }
          else if (sessionAttributes.emergencyFlow === 1) {
+            //IF THEY HAVENT CALLED 911, TELL THEM TO
             sessionAttributes.speechText = callDeclined
             sessionAttributes.resetFlow = 1
             sessionAttributes.emergencyFlow = 0
@@ -156,6 +180,7 @@ const AdviceAndSymptomsIntentHandler = {
       const noCommandSpecified3 = requestAttributes.t('initial.NO_COMMAND_SPECIFIED_3')
       const firstStepText = requestAttributes.t('initial.FIRST_STEP_TEXT')
       const sayNext = requestAttributes.t('initial.SAY_NEXT')
+      const helpPrompt = requestAttributes.t('initial.HELP_PROMPT')
       const symptomIntro = requestAttributes.t('initial.SYMPTOM_INTRO')
       const symptomPrompt = requestAttributes.t('initial.SYMPTOM_PROMPT')
       const include = requestAttributes.t('initial.INCLUDE')
@@ -208,6 +233,7 @@ const AdviceAndSymptomsIntentHandler = {
          // IF THERE IS NO USER CHOICE, PROMPT THE USER
          if (sessionAttributes.userInjury === undefined) {
             if (injury && injury.value) {
+               //IF THE USER HAS ACTUALLY SPECIFIED AN INJURY, DO THIS
                sessionAttributes.userInjury = injury.resolutions.resolutionsPerAuthority[0].values[0].value.name.toLowerCase()
                attributesManager.setSessionAttributes(sessionAttributes)
 
@@ -216,13 +242,17 @@ const AdviceAndSymptomsIntentHandler = {
                const symptom = sessionAttributes.symptom
 
                if (sessionAttributes.userInjury === ('bleeding' || 'animal bite' || 'burns')) {
-                  sessionAttributes.speechText = symptom + ' ' + callIfInDoubt
+                  sessionAttributes.speechText = symptom + ' ' + callIfInDoubt + ' ' + helpPrompt
                }
                else {
-                  sessionAttributes.speechText = symptomIntro + ' ' + sessionAttributes.userInjury + ' ' + include + ' ' + symptom + ' ' + callIfInDoubt
+                  sessionAttributes.speechText = symptomIntro + ' ' + sessionAttributes.userInjury + ' ' + include + ' ' + symptom + ' ' + callIfInDoubt + ' ' + helpPrompt
+
                }
+               sessionAttributes.userNeedsHelp = 1
+               sessionAttributes.userInjury = undefined
                sessionAttributes.symptomIntentActive = 0
             }
+            //IF THE USER HASN'T SPECIFIED AN INJURY, ASK FOR ONE
             else {
                sessionAttributes.speechText = symptomPrompt
                sessionAttributes.startSymptomIntent = 1
@@ -231,11 +261,21 @@ const AdviceAndSymptomsIntentHandler = {
          else {
             //ACTUAL SYMPTOM FLOW
             //IF THE USER CHOOSES A DIFFERENT INJURY AFTER ALREADY SPECIFYING ONE, GET THE NEW INJURY VALUE
-            if (!(sessionAttributes.adviceIntentActive === 1)) {
-               sessionAttributes.newUserChoice = injury.resolutions.resolutionsPerAuthority[0].values[0].value.name.toLowerCase()
-               if (!(sessionAttributes.userInjury === sessionAttributes.newUserChoice)) {
-                  sessionAttributes.userInjury = sessionAttributes.newUserChoice
-                  attributesManager.setSessionAttributes(sessionAttributes)
+            if ((!(sessionAttributes.adviceIntentActive === 1)) || (sessionAttributes.userWantsSymptoms === 1)) {
+               //IF THE USER HAS ACTUALLY SPECIFIED AN INJURY, DO THIS
+               if (injury && injury.value) {
+                  sessionAttributes.newUserChoice = injury.resolutions.resolutionsPerAuthority[0].values[0].value.name.toLowerCase()
+                  console.log(sessionAttributes.newUserChoice)
+                  if (!(sessionAttributes.userInjury === sessionAttributes.newUserChoice)) {
+                     sessionAttributes.userInjury = sessionAttributes.newUserChoice
+                     sessionAttributes.userWantsSymptoms = 0
+                     attributesManager.setSessionAttributes(sessionAttributes)
+                  }
+               }
+               //IF THE USER HASN'T SPECIFIED AN INJURY, ASK FOR ONE
+               else {
+                  sessionAttributes.speechText = symptomPrompt
+                  sessionAttributes.startSymptomIntent = 1
                }
             }
 
@@ -243,11 +283,13 @@ const AdviceAndSymptomsIntentHandler = {
             const symptom = sessionAttributes.symptom
 
             if (sessionAttributes.userInjury === ('bleeding' || 'animal bite' || 'burns')) {
-               sessionAttributes.speechText = symptom + ' ' + callIfInDoubt
+               sessionAttributes.speechText = symptom + ' ' + callIfInDoubt + ' ' + helpPrompt
             }
             else {
-               sessionAttributes.speechText = symptomIntro + ' ' + sessionAttributes.userInjury + ' ' + include + ' ' + symptom + ' ' + callIfInDoubt
+               sessionAttributes.speechText = symptomIntro + ' ' + sessionAttributes.userInjury + ' ' + include + ' ' + symptom + ' ' + callIfInDoubt + ' ' + helpPrompt
             }
+            sessionAttributes.userNeedsHelp = 1
+            sessionAttributes.userInjury = undefined
             sessionAttributes.symptomIntentActive = 0                                                                                                      
          }
       }
@@ -302,7 +344,8 @@ const NextIntentHandler = {
          sessionAttributes.userInjury = undefined
          sessionAttributes.userNeedsHelp = 1
         sessionAttributes.emergencyFlow = 0
-      } else {
+      }
+      else {
          sessionAttributes.speechText = currentStep
       }
 

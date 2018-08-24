@@ -7,6 +7,7 @@ exports.strings = {
         SKILL_NAME: 'Emergency First-aid',
         HELLO: 'Welcome to {{skillName}}.',
         INJURY_QUESTION: 'Would you like advice on a certain injury?',
+        SYMPTOM_QUESTION: 'Would you like to hear about the symptoms of a certain injury?',
         EMERGENCY_PROMPT: 'Are you currently in an emergency?',
         HELP: 'I can tell you symptoms, or give you advice on how to treat a certain injury.',
         HELP_2: 'Which would you like me to do?',
