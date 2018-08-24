@@ -215,8 +215,6 @@ const AdviceAndSymptomsIntentHandler = {
                sessionAttributes.symptom = injuryList[sessionAttributes.userInjury][0].symptoms
                const symptom = sessionAttributes.symptom
 
-               console.log('hi' + sessionAttributes.userInjury)
-
                if (sessionAttributes.userInjury === ('bleeding' || 'animal bite' || 'burns')) {
                   sessionAttributes.speechText = symptom + ' ' + callIfInDoubt
                }
@@ -232,17 +230,17 @@ const AdviceAndSymptomsIntentHandler = {
          }
          else {
             //ACTUAL SYMPTOM FLOW
-            sessionAttributes.newUserChoice = injury.resolutions.resolutionsPerAuthority[0].values[0].value.name.toLowerCase()
-            if (!(sessionAttributes.userInjury === sessionAttributes.newUserChoice)) {
-               sessionAttributes.userInjury = sessionAttributes.newUserChoice
-               attributesManager.setSessionAttributes(sessionAttributes)
+            //IF THE USER CHOOSES A DIFFERENT INJURY AFTER ALREADY SPECIFYING ONE, GET THE NEW INJURY VALUE
+            if (!(sessionAttributes.adviceIntentActive === 1)) {
+               sessionAttributes.newUserChoice = injury.resolutions.resolutionsPerAuthority[0].values[0].value.name.toLowerCase()
+               if (!(sessionAttributes.userInjury === sessionAttributes.newUserChoice)) {
+                  sessionAttributes.userInjury = sessionAttributes.newUserChoice
+                  attributesManager.setSessionAttributes(sessionAttributes)
+               }
             }
 
             sessionAttributes.symptom = injuryList[sessionAttributes.userInjury][0].symptoms
             const symptom = sessionAttributes.symptom
-
-            console.log('hi' + sessionAttributes.newUserChoice)
-            console.log('hi' + sessionAttributes.userInjury)
 
             if (sessionAttributes.userInjury === ('bleeding' || 'animal bite' || 'burns')) {
                sessionAttributes.speechText = symptom + ' ' + callIfInDoubt
