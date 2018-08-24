@@ -110,7 +110,6 @@ module.exports = {
       'broken bones': [
          {
             'symptoms':
-            'Symptoms of a broken bone include: ' +
             'Severe pain and tenderness. ' +
             'Bruising and swelling. ' +
             'Difficulty moving the hand or arm. ' +
@@ -653,7 +652,6 @@ module.exports = {
       'broken bones': [
          {
             'symptoms':
-            'Symptoms of a broken bone include: ' +
             'Severe pain and tenderness. ' +
             'Bruising and swelling. ' +
             'Difficulty moving the hand or arm. ' +

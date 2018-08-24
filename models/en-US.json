@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "steph skill",
+      "invocationName": "emergency first aid",
       "types": [
         {
           "values": [
@@ -400,7 +400,7 @@
           ]
         },
         {
-          "name": "InjuryIntent",
+          "name": "AdviceIntent",
           "slots": [
             {
               "name": "injury",
@@ -434,7 +434,7 @@
           ]
         },
         {
-          "name": "SymptomOrAdviceIntent",
+          "name": "NoCommandSpecifiedIntent",
           "slots": [
             {
               "name": "injury",

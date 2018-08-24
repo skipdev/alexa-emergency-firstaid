@@ -4,6 +4,7 @@
     <list default="true" id="0a50bd02-9835-42da-9a15-27bf2a9c3979" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.ask/config" beforeDir="false" afterPath="$PROJECT_DIR$/.ask/config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lambda/custom/content/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/custom/content/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lambda/custom/content/injuries.js" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/custom/content/injuries.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lambda/custom/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/custom/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/en-US.json" beforeDir="false" afterPath="$PROJECT_DIR$/models/en-US.json" afterDir="false" />
     </list>
@@ -22,8 +23,8 @@
       <file leaf-file-name="en-US.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/en-US.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="400" column="10" lean-forward="true" selection-start-line="400" selection-start-column="10" selection-end-line="400" selection-end-column="10" />
+            <state relative-caret-position="205">
+              <caret line="238" column="14" selection-start-line="238" selection-start-column="14" selection-end-line="238" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -31,8 +32,8 @@
       <file leaf-file-name="injuries.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lambda/custom/content/injuries.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="678" column="11" selection-start-line="678" selection-start-column="7" selection-end-line="678" selection-end-column="11" />
+            <state relative-caret-position="1435">
+              <caret line="111" column="23" selection-start-line="111" selection-start-column="23" selection-end-line="111" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -40,8 +41,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lambda/custom/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="133" column="37" selection-start-line="133" selection-start-column="37" selection-end-line="133" selection-end-column="37" />
+            <state relative-caret-position="26">
+              <caret line="205" column="66" selection-start-line="205" selection-start-column="66" selection-end-line="205" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -67,8 +68,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lambda/custom/content/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
+            <state relative-caret-position="270">
+              <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -82,13 +83,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>}</find>
-      <find>911</find>
-      <find>Someone with meningitis</find>
-      <find>firstStepText</find>
-      <find>final</find>
-      <find>confirmed</find>
-      <find>repeatprompt</find>
       <find>options</find>
       <find>resetflow = 0</find>
       <find>resetflow = 1</find>
@@ -107,11 +101,18 @@
       <find>injuryprompt</find>
       <find>disclaimer</find>
       <find>FIRST_STEP_TEXT</find>
-      <find>burn</find>
-      <find>symptom</find>
       <find>injuryintentactive</find>
       <find>injuryIntentActive</find>
+      <find>requestname</find>
+      <find>SymptomOrAdviceIntent</find>
+      <find>AdviceAndSymptomsIntent</find>
+      <find>NoCommandSpecifiedIntentHandler</find>
+      <find>InjuryIntent</find>
       <find>unres</find>
+      <find>helppr</find>
+      <find>help</find>
+      <find>burn</find>
+      <find>symptom</find>
     </findStrings>
     <replaceStrings>
       <replace>EmergencyIntentHandler</replace>
@@ -122,9 +123,13 @@
       <replace>[userInjury].stepList[counter].text</replace>
       <replace>let counter</replace>
       <replace>38 degrees celcius</replace>
-      <replace>999</replace>
       <replace>injuryList[userInjury][1].stepList[counter].text</replace>
       <replace>adviceIntentActive</replace>
+      <replace>AdviceAndSymptomsIntent</replace>
+      <replace>NoCommandSpecifiedIntent</replace>
+      <replace>AdviceAndSymptomsIntentHandler</replace>
+      <replace>AdviceIntent</replace>
+      <replace>999</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -138,8 +143,8 @@
         <option value="$PROJECT_DIR$/lambda/custom/helpers/topics.js" />
         <option value="$PROJECT_DIR$/lambda/custom/handlers/index.js" />
         <option value="$PROJECT_DIR$/lambda/custom/content/injuries.js" />
-        <option value="$PROJECT_DIR$/lambda/custom/content/index.js" />
         <option value="$PROJECT_DIR$/models/en-US.json" />
+        <option value="$PROJECT_DIR$/lambda/custom/content/index.js" />
         <option value="$PROJECT_DIR$/lambda/custom/index.js" />
       </list>
     </option>
@@ -256,12 +261,12 @@
       <workItem from="1534755943551" duration="614000" />
       <workItem from="1534756964257" duration="20269000" />
       <workItem from="1534789482131" duration="18093000" />
-      <workItem from="1534924923746" duration="25138000" />
+      <workItem from="1534924923746" duration="36018000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64114000" />
+    <option name="totallyTimeSpent" value="74994000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -457,10 +462,17 @@
     <entry file="file://$PROJECT_DIR$/lambda/custom/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/models/en-US.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="238" column="14" selection-start-line="238" selection-start-column="14" selection-end-line="238" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lambda/custom/content/injuries.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="678" column="11" selection-start-line="678" selection-start-column="7" selection-end-line="678" selection-end-column="11" />
+        <state relative-caret-position="1435">
+          <caret line="111" column="23" selection-start-line="111" selection-start-column="23" selection-end-line="111" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -480,22 +492,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lambda/custom/content/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/en-US.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="400" column="10" lean-forward="true" selection-start-line="400" selection-start-column="10" selection-end-line="400" selection-end-column="10" />
+        <state relative-caret-position="270">
+          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lambda/custom/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="133" column="37" selection-start-line="133" selection-start-column="37" selection-end-line="133" selection-end-column="37" />
+        <state relative-caret-position="26">
+          <caret line="205" column="66" selection-start-line="205" selection-start-column="66" selection-end-line="205" selection-end-column="66" />
         </state>
       </provider>
     </entry>
