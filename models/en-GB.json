@@ -1,0 +1,454 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "emergency first aid",
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "allergies",
+                "synonyms": [
+                  "allergy",
+                  "allergic reaction",
+                  "allergic"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "animal bite",
+                "synonyms": [
+                  "bite",
+                  "bitten",
+                  "bites",
+                  "animal",
+                  "animal bites",
+                  "bitten by an animal"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "asthma attack",
+                "synonyms": [
+                  "asthma",
+                  "breathing",
+                  "I can't breathe",
+                  "can't breathe"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "bleeding",
+                "synonyms": [
+                  "blood",
+                  "blood on me",
+                  "blood loss",
+                  "cut",
+                  "wounded",
+                  "stabbed"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "broken bones",
+                "synonyms": [
+                  "broken",
+                  "bone",
+                  "bones",
+                  "broken bone",
+                  "broken a bone",
+                  "breakage",
+                  "break",
+                  "break a bone",
+                  "breakages",
+                  "broken limb"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "burns",
+                "synonyms": [
+                  "burn",
+                  "burned"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "choking",
+                "synonyms": [
+                  "choke",
+                  "can't swallow",
+                  "problems swallowing"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "concussion",
+                "synonyms": [
+                  "head injury",
+                  "head hurts",
+                  "bumped head",
+                  "I bumped my head",
+                  "bumped their head",
+                  "head bumped",
+                  "bump on the head",
+                  "hit their head"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "diabetes",
+                "synonyms": [
+                  "diabetic"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "distress",
+                "synonyms": [
+                  "anxiety",
+                  "anxious",
+                  "worry",
+                  "worrying",
+                  "worried",
+                  "scared",
+                  "upset",
+                  "stress",
+                  "stressed",
+                  "stressing"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "ebola",
+                "synonyms": [
+                  "ebola attack",
+                  "contagious disease",
+                  "infectious disease",
+                  "contagious",
+                  "infectious",
+                  "endemic",
+                  "toxic"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "heart attack",
+                "synonyms": [
+                  "cardiovascular disease",
+                  "cardiovascular",
+                  "congestive heart failure",
+                  "heart failure",
+                  "heart",
+                  "heart problems"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "heat stroke",
+                "synonyms": [
+                  "heat exhaustion"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "hypothermia",
+                "synonyms": [
+                  "low temperature",
+                  "cold",
+                  "too cold",
+                  "shivering",
+                  "hypothermic",
+                  "hypothermic shock",
+                  "drop in temperature"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "meningitis"
+              }
+            },
+            {
+              "name": {
+                "value": "poisoning",
+                "synonyms": [
+                  "poison",
+                  "food poisoning",
+                  "unknown substance",
+                  "unknown substance",
+                  "took a substance",
+                  "took a weird substance",
+                  "took an unknown substance"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "seizure",
+                "synonyms": [
+                  "convulsion",
+                  "convulsive",
+                  "spasm",
+                  "spasmic",
+                  "epilepsy",
+                  "epileptic",
+                  "febrile"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "sting",
+                "synonyms": [
+                  "insect sting",
+                  "insect stung",
+                  "stung"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "sprain",
+                "synonyms": [
+                  "strain",
+                  "overstretch",
+                  "overstretched",
+                  "twisted",
+                  "twist"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "stroke"
+              }
+            },
+            {
+              "name": {
+                "value": "unresponsiveness",
+                "synonyms": [
+                  "unresponsive",
+                  "not breathing",
+                  "isn't breathing",
+                  "won't respond",
+                  "isn't responding",
+                  "isn't moving",
+                  "won't move",
+                  "won't wake up",
+                  "isn't waking up"
+                ]
+              }
+            }
+          ],
+          "name": "LIST_OF_INJURIES"
+        }
+      ],
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": [
+
+          ]
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": [
+
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+
+          ]
+        },
+        {
+          "name": "YesIntent",
+          "samples": [
+            "yes",
+            "yeah",
+            "yep",
+            "ok",
+            "done",
+            "okay",
+            "yup"
+          ]
+        },
+        {
+          "name": "NoIntent",
+          "samples": [
+            "no",
+            "nope",
+            "nah"
+          ]
+        },
+        {
+          "name": "SymptomIntent",
+          "slots": [
+            {
+              "name": "injury",
+              "type": "LIST_OF_INJURIES"
+            }
+          ],
+          "samples": [
+            "tell me the symptoms",
+            "symptoms",
+            "symptom",
+            "tell me the symptoms of {injury}",
+            "symptoms of {injury}",
+            "{injury} symptoms",
+            "how do I know if someone has {injury}",
+            "how do I know if someone has a {injury}",
+            "how do I know if someone has an {injury}",
+            "how do I know if I have {injury}",
+            "how do I know if I have a {injury}",
+            "how do I know if I have an {injury}",
+            "do I have {injury}",
+            "do I have a {injury}",
+            "do I have an {injury}"
+          ]
+        },
+        {
+          "name": "RepeatIntent",
+          "samples": [
+            "say it again",
+            "say again",
+            "repeat",
+            "repeat the step",
+            "again"
+          ]
+        },
+        {
+          "name": "PreviousIntent",
+          "samples": [
+            "back",
+            "go back",
+            "go back one",
+            "back one",
+            "back one step",
+            "previous",
+            "previous step",
+            "last step",
+            "what was the last step",
+            "say the last step again"
+          ]
+        },
+        {
+          "name": "NextIntent",
+          "samples": [
+            "next",
+            "next step",
+            "skip",
+            "what's next"
+          ]
+        },
+        {
+          "name": "ThanksIntent",
+          "samples": [
+            "thanks",
+            "thank you"
+          ]
+        },
+        {
+          "name": "EmergencyIntent",
+          "samples": [
+            "emergency",
+            "call an ambulance",
+            "ambulance",
+            "nine nine nine",
+            "call nine nine nine",
+            "urgent help",
+            "urgent"
+          ]
+        },
+        {
+          "name": "InjuryPromptIntent",
+          "samples": [
+            "injury",
+            "advice on an injury",
+            "injury advice",
+            "help with an injury",
+            "i have an injury",
+            "someone's been injured",
+            "advice"
+          ]
+        },
+        {
+          "name": "AdviceIntent",
+          "slots": [
+            {
+              "name": "injury",
+              "type": "LIST_OF_INJURIES"
+            }
+          ],
+          "samples": [
+            "help with a {injury}",
+            "help with an {injury}",
+            "help with {injury}",
+            "I'm {injury}",
+            "I've {injury}",
+            "I've been {injury}",
+            "I've got a {injury}",
+            "I've got an {injury}",
+            "I have an {injury}",
+            "I have a {injury}",
+            "I have {injury}",
+            "Someone {injury}",
+            "Someone has an {injury}",
+            "Someone has a {injury}",
+            "Someone has {injury}",
+            "Someone's been {injury}",
+            "Someone's got a {injury}",
+            "Someone's got an {injury}",
+            "Someone's {injury}",
+            "I was {injury}",
+            "{injury} help",
+            "{injury} advice",
+            "{injury} attack"
+          ]
+        },
+        {
+          "name": "NoCommandSpecifiedIntent",
+          "slots": [
+            {
+              "name": "injury",
+              "type": "LIST_OF_INJURIES"
+            }
+          ],
+          "samples": [
+            "{injury}",
+            "a {injury}",
+            "an {injury}",
+            "the {injury}"
+          ]
+        }
+      ]
+    }
+  }
+}
